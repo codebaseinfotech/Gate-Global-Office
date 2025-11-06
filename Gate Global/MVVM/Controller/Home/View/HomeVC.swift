@@ -61,6 +61,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // collection
         collectionVIewRecentSteps.register(UINib(nibName: "RecentStepsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RecentStepsCollectionViewCell")
         collectionVIewRecentSteps.delegate = self
         collectionVIewRecentSteps.dataSource = self
