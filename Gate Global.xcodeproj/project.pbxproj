@@ -11,8 +11,18 @@
 		8847A4352EB9FAC40035F4C5 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8847A4332EB9FAC40035F4C5 /* HomeVC.xib */; };
 		8851D3D72EBA12BF0092E1BC /* RecentStepsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8851D3D52EBA12BF0092E1BC /* RecentStepsCollectionViewCell.swift */; };
 		8851D3D82EBA12BF0092E1BC /* RecentStepsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8851D3D62EBA12BF0092E1BC /* RecentStepsCollectionViewCell.xib */; };
+		8856E0062EBC7B3900792D87 /* MyStepsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8856E0052EBC7B3900792D87 /* MyStepsVC.xib */; };
+		8856E0072EBC7B3900792D87 /* MyStepsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8856E0042EBC7B3900792D87 /* MyStepsVC.swift */; };
+		8856E00A2EBC7F6F00792D87 /* MyStepsTblViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8856E0092EBC7F6F00792D87 /* MyStepsTblViewCell.xib */; };
+		8856E00B2EBC7F6F00792D87 /* MyStepsTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8856E0082EBC7F6F00792D87 /* MyStepsTblViewCell.swift */; };
+		8856E0112EBC9F4E00792D87 /* PathActivitiesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8856E0102EBC9F4E00792D87 /* PathActivitiesVC.xib */; };
+		8856E0122EBC9F4E00792D87 /* PathActivitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8856E00F2EBC9F4E00792D87 /* PathActivitiesVC.swift */; };
+		8856E0152EBCA0D500792D87 /* PathsTblViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8856E0142EBCA0D500792D87 /* PathsTblViewCell.xib */; };
+		8856E0162EBCA0D500792D87 /* PathsTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8856E0132EBCA0D500792D87 /* PathsTblViewCell.swift */; };
 		887937192EB9DDA60013248E /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887937182EB9DDA60013248E /* LoginVC.xib */; };
 		8879371A2EB9DDA60013248E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887937172EB9DDA60013248E /* LoginVC.swift */; };
+		888BAD6A2EBC55C8009966CC /* PathActivitiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888BAD682EBC55C8009966CC /* PathActivitiesCollectionViewCell.swift */; };
+		888BAD6B2EBC55C8009966CC /* PathActivitiesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888BAD692EBC55C8009966CC /* PathActivitiesCollectionViewCell.xib */; };
 		8898A7BA2EB8651E008867AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8898A7B12EB8651E008867AC /* AppDelegate.swift */; };
 		8898A7BB2EB8651E008867AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8898A7B82EB8651E008867AC /* ViewController.swift */; };
 		8898A7BC2EB8651E008867AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8898A7B22EB8651E008867AC /* Assets.xcassets */; };
@@ -26,6 +36,8 @@
 		8898A7CF2EB86969008867AC /* VideoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8898A7C72EB86969008867AC /* VideoPicker.swift */; };
 		8898A7D02EB86969008867AC /* AppUtilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8898A7CA2EB86969008867AC /* AppUtilites.swift */; };
 		8898A7DB2EB86BF5008867AC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8898A7D92EB86BF5008867AC /* Localizable.strings */; };
+		88A389F52EBC676B00DC5EA3 /* DayStreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A389F32EBC676B00DC5EA3 /* DayStreamTableViewCell.swift */; };
+		88A389F62EBC676B00DC5EA3 /* DayStreamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A389F42EBC676B00DC5EA3 /* DayStreamTableViewCell.xib */; };
 		88D5487F2EBA2BD4007FF81C /* UpcomingEventsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D5487E2EBA2BD4007FF81C /* UpcomingEventsCollectionViewCell.xib */; };
 		88D548802EBA2BD4007FF81C /* UpcomingEventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D5487D2EBA2BD4007FF81C /* UpcomingEventsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -35,8 +47,18 @@
 		8847A4332EB9FAC40035F4C5 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		8851D3D52EBA12BF0092E1BC /* RecentStepsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStepsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8851D3D62EBA12BF0092E1BC /* RecentStepsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentStepsCollectionViewCell.xib; sourceTree = "<group>"; };
+		8856E0042EBC7B3900792D87 /* MyStepsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStepsVC.swift; sourceTree = "<group>"; };
+		8856E0052EBC7B3900792D87 /* MyStepsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyStepsVC.xib; sourceTree = "<group>"; };
+		8856E0082EBC7F6F00792D87 /* MyStepsTblViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStepsTblViewCell.swift; sourceTree = "<group>"; };
+		8856E0092EBC7F6F00792D87 /* MyStepsTblViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyStepsTblViewCell.xib; sourceTree = "<group>"; };
+		8856E00F2EBC9F4E00792D87 /* PathActivitiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathActivitiesVC.swift; sourceTree = "<group>"; };
+		8856E0102EBC9F4E00792D87 /* PathActivitiesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathActivitiesVC.xib; sourceTree = "<group>"; };
+		8856E0132EBCA0D500792D87 /* PathsTblViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathsTblViewCell.swift; sourceTree = "<group>"; };
+		8856E0142EBCA0D500792D87 /* PathsTblViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathsTblViewCell.xib; sourceTree = "<group>"; };
 		887937172EB9DDA60013248E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		887937182EB9DDA60013248E /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		888BAD682EBC55C8009966CC /* PathActivitiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathActivitiesCollectionViewCell.swift; sourceTree = "<group>"; };
+		888BAD692EBC55C8009966CC /* PathActivitiesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathActivitiesCollectionViewCell.xib; sourceTree = "<group>"; };
 		8898A7992EB864E9008867AC /* Gate Global.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gate Global.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8898A7B12EB8651E008867AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8898A7B22EB8651E008867AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +77,8 @@
 		8898A7DD2EB86CD9008867AC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8898A7DE2EB86CD9008867AC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		8898A7DF2EB86CD9008867AC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		88A389F32EBC676B00DC5EA3 /* DayStreamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayStreamTableViewCell.swift; sourceTree = "<group>"; };
+		88A389F42EBC676B00DC5EA3 /* DayStreamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayStreamTableViewCell.xib; sourceTree = "<group>"; };
 		88D5487D2EBA2BD4007FF81C /* UpcomingEventsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingEventsCollectionViewCell.swift; sourceTree = "<group>"; };
 		88D5487E2EBA2BD4007FF81C /* UpcomingEventsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingEventsCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +115,8 @@
 		8851D3D32EBA12770092E1BC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				88A389F22EBC673300DC5EA3 /* DayStreamTV */,
+				888BAD672EBC55A7009966CC /* PathActivitiesCV */,
 				88D5487C2EBA2BAF007FF81C /* UpcomingEventsCV */,
 				8851D3D42EBA12810092E1BC /* RecentStepsCV */,
 			);
@@ -106,6 +132,60 @@
 			path = RecentStepsCV;
 			sourceTree = "<group>";
 		};
+		8856E0012EBC7B0E00792D87 /* MySteps */ = {
+			isa = PBXGroup;
+			children = (
+				8856E0022EBC7B1900792D87 /* View */,
+			);
+			path = MySteps;
+			sourceTree = "<group>";
+		};
+		8856E0022EBC7B1900792D87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8856E0032EBC7B2100792D87 /* Cell */,
+				8856E0042EBC7B3900792D87 /* MyStepsVC.swift */,
+				8856E0052EBC7B3900792D87 /* MyStepsVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8856E0032EBC7B2100792D87 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8856E0082EBC7F6F00792D87 /* MyStepsTblViewCell.swift */,
+				8856E0092EBC7F6F00792D87 /* MyStepsTblViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8856E00C2EBC9EDD00792D87 /* PathActivities */ = {
+			isa = PBXGroup;
+			children = (
+				8856E00D2EBC9EE900792D87 /* View */,
+			);
+			path = PathActivities;
+			sourceTree = "<group>";
+		};
+		8856E00D2EBC9EE900792D87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8856E00E2EBC9EF700792D87 /* Cell */,
+				8856E00F2EBC9F4E00792D87 /* PathActivitiesVC.swift */,
+				8856E0102EBC9F4E00792D87 /* PathActivitiesVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8856E00E2EBC9EF700792D87 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8856E0132EBCA0D500792D87 /* PathsTblViewCell.swift */,
+				8856E0142EBCA0D500792D87 /* PathsTblViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		8879370A2EB9DD1B0013248E /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +197,8 @@
 		887937132EB9DD390013248E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8856E00C2EBC9EDD00792D87 /* PathActivities */,
+				8856E0012EBC7B0E00792D87 /* MySteps */,
 				8847A4302EB9FAA20035F4C5 /* Home */,
 				887937142EB9DD630013248E /* LogIn */,
 			);
@@ -138,6 +220,15 @@
 				887937182EB9DDA60013248E /* LoginVC.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		888BAD672EBC55A7009966CC /* PathActivitiesCV */ = {
+			isa = PBXGroup;
+			children = (
+				888BAD682EBC55C8009966CC /* PathActivitiesCollectionViewCell.swift */,
+				888BAD692EBC55C8009966CC /* PathActivitiesCollectionViewCell.xib */,
+			);
+			path = PathActivitiesCV;
 			sourceTree = "<group>";
 		};
 		8898A7902EB864E9008867AC = {
@@ -208,6 +299,15 @@
 				8898A7D92EB86BF5008867AC /* Localizable.strings */,
 			);
 			path = Localizable;
+			sourceTree = "<group>";
+		};
+		88A389F22EBC673300DC5EA3 /* DayStreamTV */ = {
+			isa = PBXGroup;
+			children = (
+				88A389F32EBC676B00DC5EA3 /* DayStreamTableViewCell.swift */,
+				88A389F42EBC676B00DC5EA3 /* DayStreamTableViewCell.xib */,
+			);
+			path = DayStreamTV;
 			sourceTree = "<group>";
 		};
 		88D5487C2EBA2BAF007FF81C /* UpcomingEventsCV */ = {
@@ -281,11 +381,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8856E0152EBCA0D500792D87 /* PathsTblViewCell.xib in Resources */,
 				887937192EB9DDA60013248E /* LoginVC.xib in Resources */,
 				8847A4352EB9FAC40035F4C5 /* HomeVC.xib in Resources */,
 				8898A7BC2EB8651E008867AC /* Assets.xcassets in Resources */,
+				8856E0112EBC9F4E00792D87 /* PathActivitiesVC.xib in Resources */,
 				88D5487F2EBA2BD4007FF81C /* UpcomingEventsCollectionViewCell.xib in Resources */,
+				8856E0062EBC7B3900792D87 /* MyStepsVC.xib in Resources */,
+				8856E00A2EBC7F6F00792D87 /* MyStepsTblViewCell.xib in Resources */,
 				8851D3D82EBA12BF0092E1BC /* RecentStepsCollectionViewCell.xib in Resources */,
+				888BAD6B2EBC55C8009966CC /* PathActivitiesCollectionViewCell.xib in Resources */,
+				88A389F62EBC676B00DC5EA3 /* DayStreamTableViewCell.xib in Resources */,
 				8898A7DB2EB86BF5008867AC /* Localizable.strings in Resources */,
 				8898A7BE2EB8651E008867AC /* LaunchScreen.storyboard in Resources */,
 				8898A7BF2EB8651E008867AC /* Main.storyboard in Resources */,
@@ -303,13 +409,19 @@
 				8898A7BB2EB8651E008867AC /* ViewController.swift in Sources */,
 				8898A7C32EB8695D008867AC /* Contants.swift in Sources */,
 				8898A7CC2EB86969008867AC /* ImagePicker.swift in Sources */,
+				88A389F52EBC676B00DC5EA3 /* DayStreamTableViewCell.swift in Sources */,
+				888BAD6A2EBC55C8009966CC /* PathActivitiesCollectionViewCell.swift in Sources */,
 				8879371A2EB9DDA60013248E /* LoginVC.swift in Sources */,
 				8851D3D72EBA12BF0092E1BC /* RecentStepsCollectionViewCell.swift in Sources */,
+				8856E0072EBC7B3900792D87 /* MyStepsVC.swift in Sources */,
 				8898A7CD2EB86969008867AC /* AGDesignable.swift in Sources */,
 				8898A7CE2EB86969008867AC /* PickerViewViewController.swift in Sources */,
+				8856E00B2EBC7F6F00792D87 /* MyStepsTblViewCell.swift in Sources */,
+				8856E0122EBC9F4E00792D87 /* PathActivitiesVC.swift in Sources */,
 				8898A7CF2EB86969008867AC /* VideoPicker.swift in Sources */,
 				8898A7D02EB86969008867AC /* AppUtilites.swift in Sources */,
 				8847A4342EB9FAC40035F4C5 /* HomeVC.swift in Sources */,
+				8856E0162EBCA0D500792D87 /* PathsTblViewCell.swift in Sources */,
 				8898A7C42EB8695D008867AC /* UIView+Extension.swift in Sources */,
 				88D548802EBA2BD4007FF81C /* UpcomingEventsCollectionViewCell.swift in Sources */,
 			);
