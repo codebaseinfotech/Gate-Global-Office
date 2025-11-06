@@ -26,6 +26,19 @@ class PathActivitiesVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
+    @IBAction func clickedMessageTab(_ sender: Any) {
+    }
+    
+    @IBAction func clickedStepsTab(_ sender: Any) {
+        let vc = MyStepsVC()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @IBAction func clickedPathTab(_ sender: Any) {
+        let vc = PathActivitiesVC()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
 }
 
 extension PathActivitiesVC: UITableViewDelegate, UITableViewDataSource {

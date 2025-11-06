@@ -208,6 +208,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="viewBottomLine" destination="TNu-yr-67e" id="4pt-gK-6aC"/>
+                <outlet property="viewMain" destination="mb0-vH-E5Y" id="Dx6-Jz-ckr"/>
+            </connections>
             <point key="canvasLocation" x="138.93129770992365" y="-23.239436619718312"/>
         </tableViewCell>
     </objects>

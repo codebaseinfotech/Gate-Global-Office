@@ -119,7 +119,21 @@ class HomeVC: UIViewController {
             }
         }
     }
-
+    
+    @IBAction func clickedStepsTab(_ sender: Any) {
+        let vc = MyStepsVC()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @IBAction func clickedPathTab(_ sender: Any) {
+        let vc = PathActivitiesVC()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @IBAction func clickedMessageTab(_ sender: Any) {
+    }
+    
+    
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -174,6 +188,35 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tblViewDayStream.dequeueReusableCell(withIdentifier: "DayStreamTableViewCell") as! DayStreamTableViewCell
+        
+        let isFirstCell = indexPath.row == 0
+        let isLastCell = indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1
+        
+        // Hide bottom line only for last cell
+        cell.viewBottomLine.isHidden = isLastCell
+        
+        // Apply corner radius for first and last cells
+        if isFirstCell && isLastCell {
+            // Single cell case — round all corners
+            cell.viewMain.layer.cornerRadius = 10
+            cell.viewMain.layer.maskedCorners = [
+                .layerMinXMinYCorner, .layerMaxXMinYCorner,
+                .layerMinXMaxYCorner, .layerMaxXMaxYCorner
+            ]
+        } else if isFirstCell {
+            // First cell — top corners only
+            cell.viewMain.layer.cornerRadius = 10
+            cell.viewMain.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        } else if isLastCell {
+            // Last cell — bottom corners only
+            cell.viewMain.layer.cornerRadius = 10
+            cell.viewMain.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        } else {
+            // Middle cells — no corner radius
+            cell.viewMain.layer.cornerRadius = 0
+        }
+        
+        cell.viewMain.layer.masksToBounds = true
         
         return cell
     }

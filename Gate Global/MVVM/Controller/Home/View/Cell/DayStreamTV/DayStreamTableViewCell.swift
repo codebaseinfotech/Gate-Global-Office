@@ -9,6 +9,9 @@ import UIKit
 
 class DayStreamTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var viewBottomLine: UIView!
+    @IBOutlet weak var viewMain: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
