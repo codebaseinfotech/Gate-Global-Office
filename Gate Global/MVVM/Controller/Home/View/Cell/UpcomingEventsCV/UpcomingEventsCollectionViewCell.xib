@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="UpcomingEventsCollectionViewCell" customModule="Gate_Global" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyR-v3-YhK">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home page-image" translatesAutoresizingMaskIntoConstraints="NO" id="pKe-gw-0V8">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pKe-gw-0V8" secondAttribute="bottom" id="8Qf-MA-1YK"/>
+                            <constraint firstItem="pKe-gw-0V8" firstAttribute="top" secondItem="cyR-v3-YhK" secondAttribute="top" id="JAn-Do-gep"/>
+                            <constraint firstAttribute="trailing" secondItem="pKe-gw-0V8" secondAttribute="trailing" id="MYS-UY-UdR"/>
+                            <constraint firstItem="pKe-gw-0V8" firstAttribute="leading" secondItem="cyR-v3-YhK" secondAttribute="leading" id="WTZ-C0-swg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cyR-v3-YhK" secondAttribute="trailing" id="Bhp-iA-PMJ"/>
+                <constraint firstItem="cyR-v3-YhK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="G9T-Rd-SvG"/>
+                <constraint firstAttribute="bottom" secondItem="cyR-v3-YhK" secondAttribute="bottom" id="UmN-R7-Xll"/>
+                <constraint firstItem="cyR-v3-YhK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eUX-aT-CJf"/>
+            </constraints>
+            <point key="canvasLocation" x="-17" y="-32"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Home page-image" width="272" height="186"/>
+    </resources>
+</document>
