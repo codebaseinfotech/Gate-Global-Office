@@ -138,15 +138,15 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="1591.6666666666667"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZr-ti-wvx">
-                                    <rect key="frame" x="20" y="15" width="358" height="45"/>
+                                    <rect key="frame" x="15" y="15" width="363" height="45"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search tasks, steps, events" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lst-gf-Qko">
-                                            <rect key="frame" x="10" y="5" width="298" height="35"/>
+                                            <rect key="frame" x="10" y="5" width="303" height="35"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_search" translatesAutoresizingMaskIntoConstraints="NO" id="HCf-g5-GGi">
-                                            <rect key="frame" x="318" y="10" width="25" height="25"/>
+                                            <rect key="frame" x="323" y="10" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="25" id="Wkf-U6-yFf"/>
                                                 <constraint firstAttribute="height" constant="25" id="aRf-Et-Sod"/>
@@ -276,7 +276,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="sGo-pf-nBe" firstAttribute="leading" secondItem="pOG-4d-LtZ" secondAttribute="leading" constant="15" id="1sJ-Yg-3qQ"/>
-                                <constraint firstItem="aZr-ti-wvx" firstAttribute="leading" secondItem="pOG-4d-LtZ" secondAttribute="leading" constant="20" id="9PQ-JB-Ff5"/>
+                                <constraint firstItem="aZr-ti-wvx" firstAttribute="leading" secondItem="pOG-4d-LtZ" secondAttribute="leading" constant="15" id="9PQ-JB-Ff5"/>
                                 <constraint firstItem="VL4-FK-ZVm" firstAttribute="leading" secondItem="pOG-4d-LtZ" secondAttribute="leading" id="AsP-eN-dTo"/>
                                 <constraint firstItem="aZr-ti-wvx" firstAttribute="top" secondItem="pOG-4d-LtZ" secondAttribute="top" constant="15" id="FXC-P3-gdi"/>
                                 <constraint firstItem="pB8-po-3dD" firstAttribute="top" secondItem="dgD-Sd-Mnm" secondAttribute="bottom" constant="5" id="ImF-0m-xKS"/>

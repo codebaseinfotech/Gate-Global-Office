@@ -128,7 +128,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbO-s1-2hI">
-                    <rect key="frame" x="15" y="134" width="363" height="45"/>
+                    <rect key="frame" x="15" y="129" width="363" height="45"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fa6-rO-Lm5">
                             <rect key="frame" x="0.0" y="0.0" width="203" height="45"/>
@@ -249,13 +249,13 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxH-QI-zbr">
-                    <rect key="frame" x="15" y="204" width="73" height="20.333333333333343"/>
+                    <rect key="frame" x="15" y="194" width="73" height="20.333333333333343"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                     <color key="textColor" name="primary_color"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lkw-p3-fTf">
-                    <rect key="frame" x="0.0" y="234.33333333333331" width="393" height="617.66666666666674"/>
+                    <rect key="frame" x="0.0" y="224.33333333333331" width="393" height="627.66666666666674"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WuA-Ya-AzP">
@@ -476,8 +476,8 @@
                 <constraint firstItem="Lkw-p3-fTf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KxX-iD-DKF"/>
                 <constraint firstItem="9wu-Er-TqH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PU8-hV-oDG"/>
                 <constraint firstItem="mDN-tU-Bhp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QdW-di-qtM"/>
-                <constraint firstItem="YxH-QI-zbr" firstAttribute="top" secondItem="fbO-s1-2hI" secondAttribute="bottom" constant="25" id="RtT-JG-Jbw"/>
-                <constraint firstItem="fbO-s1-2hI" firstAttribute="top" secondItem="mDN-tU-Bhp" secondAttribute="bottom" constant="20" id="VGS-fZ-NX6"/>
+                <constraint firstItem="YxH-QI-zbr" firstAttribute="top" secondItem="fbO-s1-2hI" secondAttribute="bottom" constant="20" id="RtT-JG-Jbw"/>
+                <constraint firstItem="fbO-s1-2hI" firstAttribute="top" secondItem="mDN-tU-Bhp" secondAttribute="bottom" constant="15" id="VGS-fZ-NX6"/>
                 <constraint firstItem="9wu-Er-TqH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xyc-Ys-c0n"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fbO-s1-2hI" secondAttribute="trailing" constant="15" id="Y3O-ir-As5"/>
                 <constraint firstAttribute="bottom" secondItem="WuA-Ya-AzP" secondAttribute="bottom" id="f0F-aR-9Ht"/>
