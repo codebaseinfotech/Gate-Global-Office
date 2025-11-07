@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let login = LoginVC()
+        let login = HomeVC()
         let homeNavigation = UINavigationController(rootViewController: login)
         homeNavigation.navigationBar.isHidden = true
         self.window?.rootViewController = homeNavigation

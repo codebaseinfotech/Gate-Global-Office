@@ -19,7 +19,7 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var dayStreamHeightConst: NSLayoutConstraint!
     
-    let SlidarsectionInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    let SlidarsectionInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     let SlidaritemsPerRow : CGFloat = 1.1
     var SlidarflowLayout: UICollectionViewFlowLayout {
         let _SlidarflowLayout = UICollectionViewFlowLayout()
@@ -41,7 +41,7 @@ class HomeVC: UIViewController {
         return _SlidarflowLayout
     }
     
-    let UpcomingsectionInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    let UpcomingsectionInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     let UpcomingitemsPerRow : CGFloat = 1.0
     var UpcomingflowLayout: UICollectionViewFlowLayout {
         let _UpcomingflowLayout = UICollectionViewFlowLayout()
@@ -63,7 +63,7 @@ class HomeVC: UIViewController {
         return _UpcomingflowLayout
     }
     
-    let PathsectionInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    let PathsectionInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     let PathitemsPerRow : CGFloat = 1.2
     var PathflowLayout: UICollectionViewFlowLayout {
         let _PathflowLayout = UICollectionViewFlowLayout()
