@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         homeNavigation.navigationBar.isHidden = true
         self.window?.rootViewController = homeNavigation
         self.window?.makeKeyAndVisible()
+        
+        IQKeyboardManager.shared.enable = true
         
         // Override point for customization after application launch.
         return true
