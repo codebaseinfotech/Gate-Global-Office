@@ -121,11 +121,14 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     }
     
     @IBAction func tappedAddAttachment(_ sender: Any) {
-        self.setUpMakeToast(msg: "Add Attachment not implemented yet")
+        let vc = AddAttachmentVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func tappedCreateFolder(_ sender: Any) {
-        self.setUpMakeToast(msg: "Create Folder not implemented yet")
+        let vc = CreateFolderPopUpVC()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false)
     }
     
     

