@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="SideMenuListTVCell" customModule="Gate_Global" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fF1-XY-Jlm">
+                        <rect key="frame" x="20" y="5" width="280" height="34"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="73h-cV-sE0">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logout" translatesAutoresizingMaskIntoConstraints="NO" id="p2a-Ze-AMG">
+                                        <rect key="frame" x="0.0" y="7" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="VoA-ei-5ad"/>
+                                            <constraint firstAttribute="height" constant="20" id="pGr-Zk-uXh"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PC-QY-g35">
+                                        <rect key="frame" x="40" y="8.6666666666666643" width="240" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="73h-cV-sE0" secondAttribute="bottom" id="4ET-c4-SNn"/>
+                            <constraint firstItem="73h-cV-sE0" firstAttribute="top" secondItem="fF1-XY-Jlm" secondAttribute="top" id="8pb-D6-lc4"/>
+                            <constraint firstItem="73h-cV-sE0" firstAttribute="leading" secondItem="fF1-XY-Jlm" secondAttribute="leading" id="hQZ-Gf-Alg"/>
+                            <constraint firstAttribute="trailing" secondItem="73h-cV-sE0" secondAttribute="trailing" id="l4s-c8-Kam"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="fF1-XY-Jlm" secondAttribute="bottom" constant="5" id="2vf-SA-CAj"/>
+                    <constraint firstItem="fF1-XY-Jlm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Iq1-ih-SBo"/>
+                    <constraint firstItem="fF1-XY-Jlm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="fwB-Sm-1tw"/>
+                    <constraint firstAttribute="trailing" secondItem="fF1-XY-Jlm" secondAttribute="trailing" constant="20" id="lD8-9t-gvC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgMenuListIcon" destination="p2a-Ze-AMG" id="NGM-On-chY"/>
+                <outlet property="lblMenuListName" destination="8PC-QY-g35" id="ttH-zx-p0a"/>
+            </connections>
+            <point key="canvasLocation" x="140" y="137"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_logout" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

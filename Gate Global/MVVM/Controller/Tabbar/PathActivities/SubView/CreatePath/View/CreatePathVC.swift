@@ -34,7 +34,15 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     @IBOutlet weak var viewDestinationPopUp: PathNameListView!
     @IBOutlet weak var viewAddDestinationBtn: UIView!
     @IBOutlet weak var tblPathVault: UITableView!
-
+    @IBOutlet weak var collectionViewMembersList: UICollectionView! {
+        didSet {
+            collectionViewMembersList.register(UINib(nibName: "MembersListCVCell", bundle: nil), forCellWithReuseIdentifier: "MembersListCVCell")
+            collectionViewMembersList.delegate = self
+            collectionViewMembersList.dataSource = self
+        }
+    }
+    @IBOutlet weak var heightConstMemberListCV: NSLayoutConstraint!
+    
     var dropDown = DropDown()
 
     var pathTypes = ["Internal", "External"]
@@ -121,11 +129,23 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     }
     
     @IBAction func tappedAddAttachment(_ sender: Any) {
+        guard let pathName = txtPathName.text,
+              !pathName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            setUpMakeToast(msg: "Please select path name")
+            return
+        }
+        
         let vc = AddAttachmentVC()
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func tappedCreateFolder(_ sender: Any) {
+        guard let pathName = txtPathName.text,
+              !pathName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            setUpMakeToast(msg: "Please select path name")
+            return
+        }
+        
         let vc = CreateFolderPopUpVC()
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: false)
@@ -496,3 +516,57 @@ extension CreatePathVC: PathVaultCellDelegate {
         cell.updateChevronRotation(expanded: item.isExpanded, animated: true)
     }
 }
+
+extension CreatePathVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = self.collectionViewMembersList.dequeueReusableCell(withReuseIdentifier: "MembersListCVCell", for: indexPath) as! MembersListCVCell
+        
+        if indexPath.row == 0 {
+            cell.viewMainAdd.isHidden = false
+            cell.viewMainMembers.isHidden = true
+        } else {
+            cell.viewMainAdd.isHidden = true
+            cell.viewMainMembers.isHidden = false
+        }
+        
+        return cell
+    }
+    
+    
+}
+
+extension CreatePathVC: UICollectionViewDelegateFlowLayout {
+    // MARK: - Section Insets
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 5, bottom: 0, right: 5)
+    }
+    // MARK: - Minimum Line Spacing (Vertical)
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    // MARK: - Minimum Interitem Spacing (Horizontal)
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: 60, height: 90)
+    }
+    
+}
+

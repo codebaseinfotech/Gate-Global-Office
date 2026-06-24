@@ -26,4 +26,35 @@ class GGUtilites {
     class func getCurrentUserToken() -> String {
         return userDefaults.string(forKey: "access_token") ?? ""
     }
+    
+    class func saveCurrentUser(_ user: User?) {
+        guard let user = user else { return }
+        
+        do {
+            let data = try PropertyListEncoder().encode(user)
+            userDefaults.set(data, forKey: "currentUser")
+        } catch {
+            print("❌ Failed to save user: \(error)")
+        }
+    }
+    
+    class func getCurrentUser() -> User? {
+        guard let data = userDefaults.data(forKey: "currentUser") else {
+            return nil
+        }
+        
+        do {
+            return try PropertyListDecoder().decode(User.self, from: data)
+        } catch {
+            print("❌ Failed to decode user: \(error)")
+            return nil
+        }
+    }
+    
+    class func logout() {
+        userDefaults.removeObject(forKey: "access_token")
+        userDefaults.removeObject(forKey: "currentUser")
+        userDefaults.set(false, forKey: "isUserLogin")
+        userDefaults.synchronize()
+    }
 }

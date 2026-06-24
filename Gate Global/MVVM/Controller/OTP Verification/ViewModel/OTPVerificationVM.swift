@@ -44,11 +44,9 @@ class OTPVerificationVM {
                 
                 if response?.success == true {
                     
-                    // ✅ Save token
-                    if let token = response?.data?.accessToken {
-                        GGUtilites.saveCurrentUserToken(token)
-                        GGUtilites.saveIsGetCurrentUser(true)
-                    }
+                    GGUtilites.saveCurrentUserToken(response?.data?.accessToken ?? "")
+                    GGUtilites.saveCurrentUser(response?.data?.user)
+                    GGUtilites.saveIsGetCurrentUser(true)
                     
                     self.successVerifyOTP?()
                     

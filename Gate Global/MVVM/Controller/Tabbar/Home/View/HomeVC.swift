@@ -133,6 +133,9 @@ class HomeVC: UIViewController {
     @IBAction func clickedMessageTab(_ sender: Any) {
     }
     
+    @IBAction func tappedSideMenu(_ sender: Any) {
+        showSideMenu()
+    }
     
 }
 
@@ -168,7 +171,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         return UICollectionViewCell()
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    /*func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collectionVIewRecentSteps {
             let vc = MyStepsVC()
             self.navigationController?.pushViewController(vc, animated: false)
@@ -176,7 +179,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
             let vc = PathActivitiesVC()
             self.navigationController?.pushViewController(vc, animated: false)
         }
-    }
+    }*/
         
 }
 

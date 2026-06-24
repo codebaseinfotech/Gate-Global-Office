@@ -10,14 +10,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePathVC" customModule="Gate_Global" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePathVC" customModule="Pathrium" customModuleProvider="target">
             <connections>
                 <outlet property="btnAddDestination" destination="ZEu-PZ-xue" id="ls0-g9-cOZ"/>
+                <outlet property="collectionViewMembersList" destination="Y4s-Kc-OoN" id="nsp-Jk-fh7"/>
+                <outlet property="heightConstMemberListCV" destination="Dz1-7Z-Kzq" id="XEN-gF-KAk"/>
                 <outlet property="imgPathPhoto" destination="RQU-dh-oUK" id="xzH-Cs-Z0x"/>
                 <outlet property="svMainDestination" destination="2Xc-8r-231" id="mq2-yI-Vaq"/>
                 <outlet property="svMainTrackName" destination="GLv-7p-cd2" id="EEc-t3-gxV"/>
                 <outlet property="svSelectPhotoText" destination="5T0-D1-DSK" id="eih-pF-4SD"/>
                 <outlet property="switchLiveChat" destination="0Zb-qj-fh4" id="RBH-zx-Mqq"/>
+                <outlet property="tblPathVault" destination="pfW-a3-Edx" id="vault-tbl-con"/>
                 <outlet property="txtAddress" destination="vmw-Er-8kk" id="JmF-GE-46A"/>
                 <outlet property="txtContactPersonName" destination="MS3-ur-Sp6" id="LDd-J6-Fiy"/>
                 <outlet property="txtDestination" destination="jPg-ZV-dHQ" id="3Ri-qz-4QU"/>
@@ -33,7 +36,6 @@
                 <outlet property="viewPathNamePopUp" destination="9Nz-ag-Cj3" id="1CK-WC-dQW"/>
                 <outlet property="viewSelectPathType" destination="GbY-at-vgD" id="peb-gH-TAE"/>
                 <outlet property="viewTrackNamePopUp" destination="zPb-K2-cR0" id="sMd-ys-rRN"/>
-                <outlet property="tblPathVault" destination="pfW-a3-Edx" id="vault-tbl-con"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -154,7 +156,7 @@
                     <rect key="frame" x="0.0" y="168" width="393" height="684"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nc6-Ag-U7h">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="1488"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="1850"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhK-RI-nxJ">
                                     <rect key="frame" x="20" y="10" width="353" height="1146"/>
@@ -797,7 +799,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZa-Ev-7zu">
-                                    <rect key="frame" x="20" y="1178" width="353" height="300"/>
+                                    <rect key="frame" x="20" y="1178" width="353" height="470"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayM-hV-hzS">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
@@ -948,13 +950,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRACK VAULT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANn-c0-SLH">
-                                                    <rect key="frame" x="10" y="60" width="97.333333333333329" height="17"/>
+                                                    <rect key="frame" x="10" y="60" width="97.333333333333329" height="25"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pfW-a3-Edx">
-                                                    <rect key="frame" x="0.0" y="87" width="333" height="250"/>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pfW-a3-Edx">
+                                                    <rect key="frame" x="0.0" y="95" width="333" height="250"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="250" id="z7K-Ul-XWr"/>
@@ -1013,16 +1015,73 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uxu-r3-34x">
+                                    <rect key="frame" x="20" y="1670" width="353" height="160"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pug-8u-9TE">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uT-HN-sHz">
+                                                    <rect key="frame" x="15" y="14.333333333333259" width="81" height="21.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" name="primary_color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="MLn-rm-e7j"/>
+                                                <constraint firstItem="2uT-HN-sHz" firstAttribute="centerY" secondItem="pug-8u-9TE" secondAttribute="centerY" id="fSS-ez-zk4"/>
+                                                <constraint firstItem="2uT-HN-sHz" firstAttribute="leading" secondItem="pug-8u-9TE" secondAttribute="leading" constant="15" id="zVG-tf-Y1U"/>
+                                            </constraints>
+                                        </view>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Y4s-Kc-OoN">
+                                            <rect key="frame" x="5" y="50" width="343" height="110"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ee6-2F-f5c">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="pug-8u-9TE" firstAttribute="top" secondItem="Uxu-r3-34x" secondAttribute="top" id="6J6-dy-sdc"/>
+                                        <constraint firstAttribute="height" constant="160" id="Dz1-7Z-Kzq"/>
+                                        <constraint firstAttribute="trailing" secondItem="Y4s-Kc-OoN" secondAttribute="trailing" constant="5" id="V1O-T3-mJr"/>
+                                        <constraint firstAttribute="bottom" secondItem="Y4s-Kc-OoN" secondAttribute="bottom" id="X4I-KX-I6N"/>
+                                        <constraint firstAttribute="trailing" secondItem="pug-8u-9TE" secondAttribute="trailing" id="YVz-u9-qD0"/>
+                                        <constraint firstItem="Y4s-Kc-OoN" firstAttribute="leading" secondItem="Uxu-r3-34x" secondAttribute="leading" constant="5" id="Yfz-EL-TIF"/>
+                                        <constraint firstItem="Y4s-Kc-OoN" firstAttribute="top" secondItem="pug-8u-9TE" secondAttribute="bottom" id="j90-yX-ruC"/>
+                                        <constraint firstItem="pug-8u-9TE" firstAttribute="leading" secondItem="Uxu-r3-34x" secondAttribute="leading" id="p8G-Jz-GFZ"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" systemColor="systemGray4Color"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="Uxu-r3-34x" firstAttribute="leading" secondItem="nc6-Ag-U7h" secondAttribute="leading" constant="20" id="NDH-VL-lDU"/>
                                 <constraint firstItem="gZa-Ev-7zu" firstAttribute="leading" secondItem="nc6-Ag-U7h" secondAttribute="leading" constant="20" id="Oqw-MZ-97P"/>
                                 <constraint firstAttribute="trailing" secondItem="gZa-Ev-7zu" secondAttribute="trailing" constant="20" id="Qy2-a3-nQg"/>
-                                <constraint firstAttribute="bottom" secondItem="gZa-Ev-7zu" secondAttribute="bottom" constant="10" id="VK9-dQ-xeB"/>
+                                <constraint firstAttribute="trailing" secondItem="Uxu-r3-34x" secondAttribute="trailing" constant="20" id="eIY-3S-dhz"/>
                                 <constraint firstItem="HhK-RI-nxJ" firstAttribute="leading" secondItem="nc6-Ag-U7h" secondAttribute="leading" constant="20" id="hMf-J2-UNY"/>
+                                <constraint firstAttribute="bottom" secondItem="Uxu-r3-34x" secondAttribute="bottom" constant="20" id="oTQ-0o-LGe"/>
                                 <constraint firstItem="HhK-RI-nxJ" firstAttribute="top" secondItem="nc6-Ag-U7h" secondAttribute="top" constant="10" id="rVn-l7-JR7"/>
                                 <constraint firstItem="gZa-Ev-7zu" firstAttribute="top" secondItem="HhK-RI-nxJ" secondAttribute="bottom" constant="22" id="tXh-tm-bx7"/>
                                 <constraint firstAttribute="trailing" secondItem="HhK-RI-nxJ" secondAttribute="trailing" constant="20" id="vGR-i3-sgq"/>
+                                <constraint firstItem="Uxu-r3-34x" firstAttribute="top" secondItem="gZa-Ev-7zu" secondAttribute="bottom" constant="22" id="zfM-z8-Ecb"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -1034,22 +1093,22 @@
                         <constraint firstItem="nc6-Ag-U7h" firstAttribute="leading" secondItem="LEv-SU-Dbf" secondAttribute="leading" id="dTQ-rs-Y6W"/>
                     </constraints>
                 </scrollView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Nz-ag-Cj3" customClass="PathNameListView" customModule="Gate_Global" customModuleProvider="target">
-                    <rect key="frame" x="38" y="-471.66666666666669" width="317" height="300"/>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Nz-ag-Cj3" customClass="PathNameListView" customModule="Pathrium" customModuleProvider="target">
+                    <rect key="frame" x="38" y="-833.66666666666663" width="317" height="300"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="v6O-6i-T77"/>
                     </constraints>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPb-K2-cR0" customClass="PathNameListView" customModule="Gate_Global" customModuleProvider="target">
-                    <rect key="frame" x="38" y="-283" width="317" height="300"/>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPb-K2-cR0" customClass="PathNameListView" customModule="Pathrium" customModuleProvider="target">
+                    <rect key="frame" x="38" y="-645" width="317" height="300"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="InU-T6-zVM"/>
                     </constraints>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6W-IY-Dpe" customClass="PathNameListView" customModule="Gate_Global" customModuleProvider="target">
-                    <rect key="frame" x="38" y="-143.66666666666666" width="317" height="300"/>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6W-IY-Dpe" customClass="PathNameListView" customModule="Pathrium" customModuleProvider="target">
+                    <rect key="frame" x="38" y="-505.66666666666669" width="317" height="300"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="LbV-oW-xO5"/>

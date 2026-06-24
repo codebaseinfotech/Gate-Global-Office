@@ -59,6 +59,10 @@ class PathActivitiesVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func tappedSideMenu(_ sender: Any) {
+        showSideMenu()
+    }
+    
 }
 
 extension PathActivitiesVC: UITableViewDelegate, UITableViewDataSource {

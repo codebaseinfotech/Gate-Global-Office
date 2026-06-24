@@ -39,6 +39,9 @@ class MyStepsVC: UIViewController {
     @IBAction func clickedMessageTab(_ sender: Any) {
     }
     
+    @IBAction func clickedSideMenu(_ sender: Any) {
+        showSideMenu()
+    }
     
 }
 
