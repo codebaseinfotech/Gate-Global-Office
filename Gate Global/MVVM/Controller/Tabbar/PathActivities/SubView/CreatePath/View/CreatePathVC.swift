@@ -12,7 +12,7 @@ enum ActiveField {
 import UIKit
 
 class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+
     @IBOutlet weak var txtPathName: UITextField!
     @IBOutlet weak var txtPathType: UITextField!
     @IBOutlet weak var txtViewDes: UITextView!
@@ -33,10 +33,14 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     @IBOutlet weak var viewTrackNamePopUp: PathNameListView!
     @IBOutlet weak var viewDestinationPopUp: PathNameListView!
     @IBOutlet weak var viewAddDestinationBtn: UIView!
-    
+    @IBOutlet weak var tblPathVault: UITableView!
+
     var dropDown = DropDown()
-    
+
     var pathTypes = ["Internal", "External"]
+
+    var vaultRootItems: [PathVaultItem] = []
+    private var vaultDisplayItems: [PathVaultItem] = []
     
         
     override func viewDidLoad() {
@@ -45,10 +49,10 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         viewPathNamePopUp.isHidden = true
         svMainTrackName.isHidden = true
         svMainDestination.isHidden = true
-        
+
         setupPathTypeDropDown()
         setupPopups()
-        // Do any additional setup after loading the view.
+        setupPathVault()
     }
 
     @IBAction func tappedBack(_ sender: Any) {
@@ -294,5 +298,198 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
-    
+
+    // MARK: - Path Vault Setup
+
+    func setupPathVault() {
+        tblPathVault?.register(UINib(nibName: "PathVaultCell", bundle: nil), forCellReuseIdentifier: "PathVaultCell")
+        tblPathVault?.dataSource = self
+        tblPathVault?.delegate = self
+        tblPathVault?.separatorStyle = .none
+
+        loadSampleVaultData()
+    }
+
+    func loadSampleVaultData() {
+        // Master Audio folder (yellow)
+        let masterAudio = PathVaultItem(
+            name: "Master Audio",
+            type: .folder,
+            author: "Super",
+            statusColor: .yellow,
+            folderColor: .yellow
+        )
+
+        // TRACK VAULT section header
+        let trackVaultHeader = PathVaultItem(
+            name: "TRACK VAULT",
+            type: .sectionHeader,
+            isSectionHeader: true
+        )
+
+        // Design Phase (expandable Track Vault section)
+        let designPhase = PathVaultItem(
+            name: "Design Phase",
+            type: .trackVault,
+            children: [
+                // UI Root folder (red)
+                PathVaultItem(
+                    name: "UI Root",
+                    type: .folder,
+                    statusColor: .red,
+                    folderColor: .red
+                ),
+                // Destination Vault section header
+                PathVaultItem(
+                    name: "Destination Vault",
+                    type: .sectionHeader,
+                    isSectionHeader: true
+                ),
+                // UI Design (expandable Destination Vault section)
+                PathVaultItem(
+                    name: "UI Design",
+                    type: .destinationVault,
+                    children: [
+                        // Dest WEB folder (green)
+                        PathVaultItem(
+                            name: "Dest WEB",
+                            type: .folder,
+                            children: [
+                                PathVaultItem(
+                                    name: "Dest EXC",
+                                    type: .document,
+                                    author: "Super",
+                                    statusColor: .red
+                                )
+                            ],
+                            author: "Super",
+                            statusColor: .green,
+                            folderColor: .green
+                        )
+                    ],
+                    isSection: true
+                ),
+                // UX Design (expandable Destination Vault section - empty)
+                PathVaultItem(
+                    name: "UX Design",
+                    type: .destinationVault,
+                    children: [
+                        PathVaultItem(name: "", type: .noItems)
+                    ],
+                    isSection: true
+                )
+            ],
+            isSection: true
+        )
+
+        // Design Track (expandable Track Vault section - empty)
+        let designTrack = PathVaultItem(
+            name: "Design Track",
+            type: .trackVault,
+            children: [
+                PathVaultItem(name: "", type: .noItems)
+            ],
+            isSection: true
+        )
+
+        vaultRootItems = [masterAudio, trackVaultHeader, designPhase, designTrack]
+        reloadVaultData()
+    }
+
+    func reloadVaultData() {
+        vaultDisplayItems = vaultRootItems.flatMap { $0.flattenedItems() }
+        tblPathVault?.reloadData()
+    }
+
+    func addVaultItem(_ item: PathVaultItem, to parent: PathVaultItem? = nil) {
+        if let parent = parent {
+            parent.addChild(item)
+        } else {
+            vaultRootItems.append(item)
+        }
+        reloadVaultData()
+    }
+}
+
+// MARK: - Path Vault TableView DataSource & Delegate
+
+extension CreatePathVC: UITableViewDataSource, UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == tblPathVault {
+            return vaultDisplayItems.count
+        }
+        return 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == tblPathVault {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PathVaultCell", for: indexPath) as! PathVaultCell
+            let item = vaultDisplayItems[indexPath.row]
+            cell.configure(with: item)
+            cell.delegate = self
+            return cell
+        }
+        return UITableViewCell()
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tableView == tblPathVault {
+            return 50
+        }
+        return UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == tblPathVault {
+            let item = vaultDisplayItems[indexPath.row]
+            if !item.hasChildren {
+                setUpMakeToast(msg: "Selected: \(item.name)")
+            }
+        }
+    }
+}
+
+// MARK: - PathVaultCellDelegate
+
+extension CreatePathVC: PathVaultCellDelegate {
+
+    func pathVaultCell(_ cell: PathVaultCell, didToggleExpansionFor item: PathVaultItem) {
+        guard let indexPath = tblPathVault?.indexPath(for: cell) else { return }
+
+        item.isExpanded.toggle()
+
+        if item.isExpanded {
+            let newItems = item.children.flatMap { $0.flattenedItems() }
+            let insertIndex = indexPath.row + 1
+            vaultDisplayItems.insert(contentsOf: newItems, at: insertIndex)
+
+            let indexPaths = (0..<newItems.count).map {
+                IndexPath(row: insertIndex + $0, section: 0)
+            }
+            tblPathVault?.insertRows(at: indexPaths, with: .fade)
+        } else {
+            var removeCount = 0
+            func countDescendants(_ parent: PathVaultItem) {
+                for child in parent.children {
+                    removeCount += 1
+                    if child.isExpanded {
+                        countDescendants(child)
+                    }
+                    child.isExpanded = false
+                }
+            }
+            countDescendants(item)
+
+            let removeStart = indexPath.row + 1
+            vaultDisplayItems.removeSubrange(removeStart..<(removeStart + removeCount))
+
+            let indexPaths = (0..<removeCount).map {
+                IndexPath(row: removeStart + $0, section: 0)
+            }
+            tblPathVault?.deleteRows(at: indexPaths, with: .fade)
+        }
+
+        cell.updateChevronRotation(expanded: item.isExpanded, animated: true)
+    }
 }

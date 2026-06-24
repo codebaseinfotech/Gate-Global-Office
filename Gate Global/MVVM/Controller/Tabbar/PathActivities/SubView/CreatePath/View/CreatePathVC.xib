@@ -33,6 +33,7 @@
                 <outlet property="viewPathNamePopUp" destination="9Nz-ag-Cj3" id="1CK-WC-dQW"/>
                 <outlet property="viewSelectPathType" destination="GbY-at-vgD" id="peb-gH-TAE"/>
                 <outlet property="viewTrackNamePopUp" destination="zPb-K2-cR0" id="sMd-ys-rRN"/>
+                <outlet property="tblPathVault" destination="pfW-a3-Edx" id="vault-tbl-con"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -914,7 +915,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Sa-sJ-bTk">
-                                            <rect key="frame" x="10" y="110" width="333" height="180"/>
+                                            <rect key="frame" x="10" y="110" width="333" height="350"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJW-k8-aUN">
                                                     <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
@@ -952,11 +953,11 @@
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pfW-a3-Edx">
-                                                    <rect key="frame" x="0.0" y="87" width="333" height="88"/>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pfW-a3-Edx">
+                                                    <rect key="frame" x="0.0" y="87" width="333" height="250"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="88" id="z7K-Ul-XWr"/>
+                                                        <constraint firstAttribute="height" constant="250" id="z7K-Ul-XWr"/>
                                                     </constraints>
                                                 </tableView>
                                             </subviews>
@@ -993,7 +994,7 @@
                                         <constraint firstItem="1MC-9a-Dds" firstAttribute="top" secondItem="ayM-hV-hzS" secondAttribute="bottom" constant="10" id="Buk-xG-pyk"/>
                                         <constraint firstAttribute="trailing" secondItem="ayM-hV-hzS" secondAttribute="trailing" id="G6s-nN-a4E"/>
                                         <constraint firstItem="FTf-TX-p8A" firstAttribute="top" secondItem="ayM-hV-hzS" secondAttribute="bottom" constant="10" id="HPy-xN-FMH"/>
-                                        <constraint firstAttribute="height" constant="300" id="Hgi-80-bfa"/>
+                                        <constraint firstAttribute="height" constant="470" id="Hgi-80-bfa"/>
                                         <constraint firstItem="6Sa-sJ-bTk" firstAttribute="top" secondItem="1MC-9a-Dds" secondAttribute="bottom" constant="10" id="aGZ-Tg-rIN"/>
                                         <constraint firstItem="1MC-9a-Dds" firstAttribute="leading" secondItem="gZa-Ev-7zu" secondAttribute="leading" constant="10" id="dgO-eO-fcv"/>
                                         <constraint firstAttribute="bottom" secondItem="6Sa-sJ-bTk" secondAttribute="bottom" constant="10" id="fVp-ow-JJe"/>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="PathVaultCell" customModule="Gate_Global" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="con-001">
+                        <rect key="frame" x="16" y="2" width="361" height="46"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="chv-001">
+                                <rect key="frame" x="4" y="15" width="20" height="16"/>
+                                <color key="tintColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="chvW-001"/>
+                                    <constraint firstAttribute="height" constant="16" id="chvH-001"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ico-001">
+                                <rect key="frame" x="28" y="11" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="icoW-001"/>
+                                    <constraint firstAttribute="height" constant="24" id="icoH-001"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nam-001">
+                                <rect key="frame" x="60" y="13" width="100" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="By Super" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aut-001">
+                                <rect key="frame" x="200" y="15" width="54" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dot-001">
+                                <rect key="frame" x="260" y="19" width="8" height="8"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="8" id="dotW-001"/>
+                                    <constraint firstAttribute="height" constant="8" id="dotH-001"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folder" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="typ-001">
+                                <rect key="frame" x="274" y="15" width="40" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="chv-001" firstAttribute="leading" secondItem="con-001" secondAttribute="leading" constant="4" id="c1"/>
+                            <constraint firstItem="chv-001" firstAttribute="centerY" secondItem="con-001" secondAttribute="centerY" id="c2"/>
+                            <constraint firstItem="ico-001" firstAttribute="leading" secondItem="chv-001" secondAttribute="trailing" constant="4" id="c3"/>
+                            <constraint firstItem="ico-001" firstAttribute="centerY" secondItem="con-001" secondAttribute="centerY" id="c4"/>
+                            <constraint firstItem="nam-001" firstAttribute="leading" secondItem="ico-001" secondAttribute="trailing" constant="8" id="c5"/>
+                            <constraint firstItem="nam-001" firstAttribute="centerY" secondItem="con-001" secondAttribute="centerY" id="c6"/>
+                            <constraint firstAttribute="trailing" secondItem="typ-001" secondAttribute="trailing" constant="8" id="c7"/>
+                            <constraint firstItem="typ-001" firstAttribute="centerY" secondItem="con-001" secondAttribute="centerY" id="c8"/>
+                            <constraint firstItem="dot-001" firstAttribute="trailing" secondItem="typ-001" secondAttribute="leading" constant="-6" id="c9"/>
+                            <constraint firstItem="dot-001" firstAttribute="centerY" secondItem="con-001" secondAttribute="centerY" id="c10"/>
+                            <constraint firstItem="aut-001" firstAttribute="trailing" secondItem="dot-001" secondAttribute="leading" constant="-6" id="c11"/>
+                            <constraint firstItem="aut-001" firstAttribute="centerY" secondItem="con-001" secondAttribute="centerY" id="c12"/>
+                            <constraint firstItem="aut-001" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nam-001" secondAttribute="trailing" constant="8" id="c13"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="con-001" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="lead-001"/>
+                    <constraint firstAttribute="trailing" secondItem="con-001" secondAttribute="trailing" constant="16" id="trail-001"/>
+                    <constraint firstItem="con-001" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="top-001"/>
+                    <constraint firstAttribute="bottom" secondItem="con-001" secondAttribute="bottom" constant="2" id="bot-001"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="chevronWidthConstraint" destination="chvW-001" id="conn-chvW"/>
+                <outlet property="imgChevron" destination="chv-001" id="conn-chv"/>
+                <outlet property="imgIcon" destination="ico-001" id="conn-ico"/>
+                <outlet property="lblAuthor" destination="aut-001" id="conn-aut"/>
+                <outlet property="lblName" destination="nam-001" id="conn-nam"/>
+                <outlet property="lblTypeLabel" destination="typ-001" id="conn-typ"/>
+                <outlet property="leadingConstraint" destination="lead-001" id="conn-lead"/>
+                <outlet property="viewContainer" destination="con-001" id="conn-con"/>
+                <outlet property="viewStatusDot" destination="dot-001" id="conn-dot"/>
+            </connections>
+            <point key="canvasLocation" x="38" y="82"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="chevron.down" catalog="system" width="64" height="36"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
