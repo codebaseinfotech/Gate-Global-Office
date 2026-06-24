@@ -1,0 +1,27 @@
+//
+//  Constants.swift
+//  Qadsia Club
+//
+//  Created by Kenil on 05/02/26.
+//
+
+import Foundation
+
+enum AppEnviroment {
+    case live
+    case dev
+}
+
+let current: AppEnviroment = .dev
+
+
+// ************************* LIVE ***********************
+let BASE_URL = current == .live ? "https://ggodev.si-kw.com/api/" : "https://ggodev.si-kw.com/api/"
+
+enum APIEndPoint: String {
+    case login = "v1/auth/login"
+    case sendOtp = "v1/auth/send-otp"
+    case verifyOtp = "v1/auth/verify-otp"
+    case logout = "v1/auth/logout"
+    case paths = "v1/paths"
+}

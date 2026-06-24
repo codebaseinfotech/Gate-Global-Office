@@ -12,30 +12,52 @@ class LoginVC: UIViewController {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
-    @IBOutlet weak var lblDis: UILabel!
-    @IBOutlet weak var lblEmail: UILabel!
-    @IBOutlet weak var lblPassword: UILabel!
-    @IBOutlet weak var lblLogin: UILabel!
-    @IBOutlet weak var lblOR: UILabel!
-    @IBOutlet weak var lblGoogle: UILabel!
+    var viewModel = LoginVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        bindViewModel()
         // Do any additional setup after loading the view.
     }
-
-    @IBAction func clickedMenubar(_ sender: Any) {
-        
+    
+    func bindViewModel() {
+        viewModel.successLogin = { [weak self] in
+            DispatchQueue.main.async {
+                let vc = OTPVerificationVC()
+                vc.identifier = self?.txtEmail.text ?? ""
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        viewModel.failureLogin = { [weak self] message in
+            DispatchQueue.main.async {
+                self?.setUpMakeToast(msg: message)
+            }
+        }
     }
     
     @IBAction func clickedForgetPass(_ sender: Any) {
-        
+        let vc = ForgotPasswordVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickedLogin(_ sender: Any) {
-        let vc = HomeVC()
-        self.navigationController?.pushViewController(vc, animated: true)
+        guard let email = txtEmail.text, !email.isEmpty else {
+            setUpMakeToast(msg: "Enter email")
+            return
+        }
+        
+        guard let password = txtPassword.text, !password.isEmpty else {
+            setUpMakeToast(msg: "Enter password")
+            return
+        }
+        
+        if password.count < 6 {
+            setUpMakeToast(msg: "Password must be at least 6 characters")
+            return
+        }
+        
+        viewModel.callLoginAPI(email: email, password: password)
     }
     
     @IBAction func clickedGoogle(_ sender: Any) {

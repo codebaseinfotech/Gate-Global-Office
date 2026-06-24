@@ -7,7 +7,63 @@
 
 import Foundation
 import UIKit
-//import Toast_Swift
+import Toast
+
+@IBDesignable
+class AllSideCornerView: UIView {
+
+    // MARK: - Inspectable Flags
+    @IBInspectable var enableLeftTopCorner: Bool = false { didSet { setNeedsLayout() } }
+    @IBInspectable var enableRightTopCorner: Bool = false { didSet { setNeedsLayout() } }
+    @IBInspectable var enableLeftBottomCorner: Bool = false { didSet { setNeedsLayout() } }
+    @IBInspectable var enableRightBottomCorner: Bool = false { didSet { setNeedsLayout() } }
+
+    // MARK: - Corner Radius
+    @IBInspectable var cornerRadiusSide: CGFloat = 12 {
+        didSet { setNeedsLayout() }
+    }
+
+    // MARK: - Layout
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        applyCorners()
+    }
+
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        applyCorners()
+    }
+
+    // MARK: - Corner Logic
+    private func applyCorners() {
+
+        var corners: UIRectCorner = []
+
+        if enableLeftTopCorner { corners.insert(.topLeft) }
+        if enableRightTopCorner { corners.insert(.topRight) }
+        if enableLeftBottomCorner { corners.insert(.bottomLeft) }
+        if enableRightBottomCorner { corners.insert(.bottomRight) }
+
+        // Reset if no corner selected
+        guard !corners.isEmpty else {
+            layer.mask = nil
+            return
+        }
+
+        let path = UIBezierPath(
+            roundedRect: bounds,
+            byRoundingCorners: corners,
+            cornerRadii: CGSize(width: cornerRadiusSide, height: cornerRadiusSide)
+        )
+
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.frame = bounds
+        shapeLayer.path = path.cgPath
+        layer.mask = shapeLayer
+
+        clipsToBounds = true
+    }
+}
 
 extension UIView {
     func applyGradient(colors: [CGColor]) {
@@ -40,26 +96,26 @@ extension UIView {
     
 }
 
-//extension UIViewController
-//{
-//    func setUpMakeToast(msg: String)
-//    {
-//        setUpHideMakeToast()
-//        
-//        self.view.makeToast(msg)
-//        let windows = UIApplication.shared.windows
-//        windows.last?.makeToast(msg)
-//    }
-//
-//    
-//    func setUpHideMakeToast()
-//    {
-//        self.view.hideToast()
-//        let windows = UIApplication.shared.windows
-//        windows.last?.hideToast()
-//    }
-//
-//}
+extension UIViewController
+{
+    func setUpMakeToast(msg: String)
+    {
+        setUpHideMakeToast()
+        
+        self.view.makeToast(msg)
+        let windows = UIApplication.shared.windows
+        windows.last?.makeToast(msg)
+    }
+
+    
+    func setUpHideMakeToast()
+    {
+        self.view.hideToast()
+        let windows = UIApplication.shared.windows
+        windows.last?.hideToast()
+    }
+
+}
 
 
 class RectangularDashedView: UIView {
