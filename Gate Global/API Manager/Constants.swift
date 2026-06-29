@@ -26,4 +26,6 @@ enum APIEndPoint: String {
     case paths = "v1/paths"
     case createTrack = "v1/tracks"
     case createDestinations = "v1/destinations"
+    case getUser = "v1/users"
+    case addMemeberToPath = "v1/member/add"
 }

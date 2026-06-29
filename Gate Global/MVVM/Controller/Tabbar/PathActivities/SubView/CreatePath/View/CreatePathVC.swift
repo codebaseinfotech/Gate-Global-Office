@@ -64,11 +64,29 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         viewPathNamePopUp.isHidden = true
         svMainTrackName.isHidden = true
         svMainDestination.isHidden = true
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(addMemberSuccess),
+            name: Notification.Name("AddMemberSuccess"),
+            object: nil
+        )
 
         setupPathTypeDropDown()
         setupPopups()
         setupPathVault()
         setUpUser()
+    }
+    
+    @objc func addMemberSuccess(_ notification: Notification) {
+        
+        if let id = notification.userInfo?["shareable_id"] as? Int {
+            print("🔥 Shareable ID:", id)
+            
+            // use id here
+            self.createPathVM.pathId = id
+            self.createPathVM.getPathDetails()
+        }
     }
     
     // MARK: - setUpAPI
@@ -605,7 +623,14 @@ extension CreatePathVC: UICollectionViewDelegate, UICollectionViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return self.createPathVM.pathDetails?.members?.count ?? 0
+            
+            var member: [Member] = []
+            if let trackDetails = self.createPathVM.pathDetails?.tracks?.first(where: { $0.id == self.createPathVM.track_id }) {
+                member = trackDetails.members ?? []
+            } else {
+                member = self.createPathVM.pathDetails?.members ?? []
+            }
+            return member.count
         }
     }
     
@@ -620,7 +645,12 @@ extension CreatePathVC: UICollectionViewDelegate, UICollectionViewDataSource {
 
         } else {
 
-            let member = self.createPathVM.pathDetails?.members?[indexPath.row]
+            var member: Member?
+            if let trackDetails = self.createPathVM.pathDetails?.tracks?.first(where: { $0.id == self.createPathVM.track_id }) {
+                member = trackDetails.members?[indexPath.row]
+            } else {
+                member = self.createPathVM.pathDetails?.members?[indexPath.row]
+            }
 
             cell.lblMemberFirstLetter.text = member?.name.map { String($0.prefix(2)) } ?? ""
             cell.lblMemberName.text = member?.name
@@ -630,6 +660,22 @@ extension CreatePathVC: UICollectionViewDelegate, UICollectionViewDataSource {
         }
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        var member: [Member] = []
+        if let trackDetails = self.createPathVM.pathDetails?.tracks?.first(where: { $0.id == self.createPathVM.track_id }) {
+            member = trackDetails.members ?? []
+        } else {
+            member = self.createPathVM.pathDetails?.members ?? []
+        }
+        
+        let vc = MemberListPopUpVC()
+        vc.modalPresentationStyle = .overFullScreen
+        vc.selectedMember = member
+        vc.pathId = self.createPathVM.pathId
+        self.present(vc, animated: false)
     }
     
     
@@ -660,7 +706,7 @@ extension CreatePathVC: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 60, height: 90)
+        return CGSize(width: 70, height: 90)
     }
     
 }

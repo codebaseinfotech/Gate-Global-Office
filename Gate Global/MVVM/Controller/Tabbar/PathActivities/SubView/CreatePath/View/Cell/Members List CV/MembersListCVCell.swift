@@ -14,6 +14,10 @@ class MembersListCVCell: UICollectionViewCell {
     @IBOutlet weak var lblMemberFirstLetter: UILabel!
     @IBOutlet weak var lblMemberName: UILabel!
     
+    @IBOutlet weak var viewDelete: UIView!
+    @IBOutlet weak var viewCheck: UIView!
+    @IBOutlet weak var viewCheckBorder: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

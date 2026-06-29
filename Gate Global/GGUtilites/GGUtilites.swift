@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+extension Notification.Name {
+    static let addMemberSuccess = Notification.Name("AddMemberSuccess")
+}
+
+
 class GGUtilites {
     static let userDefaults = UserDefaults.standard
     
