@@ -172,6 +172,13 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         createPathVM.failureCreateDestinations = { msg in
             self.setUpMakeToast(msg: msg)
         }
+        
+        createPathVM.successDeleteMember = {
+            self.createPathVM.getPathDetails()
+        }
+        createPathVM.failureDeleteMember = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
     }
     
     // MARK: - Action Method
@@ -657,6 +664,19 @@ extension CreatePathVC: UICollectionViewDelegate, UICollectionViewDataSource {
 
             cell.viewMainAdd.isHidden = true
             cell.viewMainMembers.isHidden = false
+            
+            cell.tappedDelete = {
+                let vc = RemoveMemberPopupVC()
+                vc.modalPresentationStyle = .overFullScreen
+                vc.name = member?.name ?? ""
+                
+                vc.clickedDelete = {
+                    self.createPathVM.removeMember(userIds: member?.id ?? 0, pathId: self.createPathVM.pathId)
+                }
+                
+                self.present(vc, animated: false)
+            }
+            
         }
 
         return cell

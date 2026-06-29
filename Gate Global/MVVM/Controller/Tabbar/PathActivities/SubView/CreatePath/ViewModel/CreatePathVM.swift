@@ -24,6 +24,9 @@ class CreatePathVM {
     var successCreateDestinations: (() -> Void)?
     var failureCreateDestinations: ((String) -> Void)?
     
+    var successDeleteMember: (() -> Void)?
+    var failureDeleteMember: ((String) -> Void)?
+    
     var pathList: [PathModel] = []
     var pathDetails: PathDetails?
     var trackDetails: TrackData?
@@ -228,6 +231,47 @@ class CreatePathVM {
             } else {
                 APIClient.sharedInstance.hideIndicator()
                 self.failureCreateDestinations?(response.message ?? "")
+            }
+        }
+    }
+    
+    func removeMember(userIds: Int, pathId: Int) {
+        
+        APIClient.sharedInstance.showIndicaor()
+        
+        let params: [String: Any] = [
+            "shareable_type": "path",
+            "shareable_id": pathId,
+            "user_id": userIds
+        ]
+        
+        APIClient.sharedInstance.request(
+            method: .delete,
+            url: .removeMemeberToPath,
+            parameters: params,
+            needUserToken: true,
+            responseType: RemoveMemberResponse.self,
+            parameterEncoding: .json
+        ) { [weak self] response, error, statusCode in
+            
+            guard let self = self else { return }
+            
+            APIClient.sharedInstance.hideIndicator()
+            
+            if let error = error {
+                self.failureDeleteMember?(error)
+                return
+            }
+            
+            guard let response = response else {
+                self.failureDeleteMember?("No response")
+                return
+            }
+            
+            if response.success == true {
+                self.successDeleteMember?()
+            } else {
+                self.failureDeleteMember?(response.message ?? "")
             }
         }
     }

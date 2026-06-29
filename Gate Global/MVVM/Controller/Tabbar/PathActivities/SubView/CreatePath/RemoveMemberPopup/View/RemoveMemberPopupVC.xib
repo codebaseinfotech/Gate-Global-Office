@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RemoveMemberPopupVC" customModule="Pathrium" customModuleProvider="target">
+            <connections>
+                <outlet property="lblTitle" destination="Coe-Qx-eSW" id="6bf-aL-Ygj"/>
+                <outlet property="view" destination="mSO-l4-XRe" id="gl1-tn-L4M"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="mSO-l4-XRe">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJ9-FG-4b2">
+                    <rect key="frame" x="20" y="296.66666666666669" width="353" height="259.00000000000006"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="YrR-wJ-fI9">
+                            <rect key="frame" x="15" y="201" width="323" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ili-mf-OoL">
+                                    <rect key="frame" x="0.0" y="0.0" width="154" height="40"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" name="primary_color"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="primary_color"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="tappedCancel:" destination="-1" eventType="touchUpInside" id="Vfy-hk-LVG"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ko-cB-ICf">
+                                    <rect key="frame" x="169" y="0.0" width="154" height="40"/>
+                                    <color key="backgroundColor" name="primary_color"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Delete">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="tappedDelete:" destination="-1" eventType="touchUpInside" id="7uR-gL-Hb1"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Xlv-dW-bNG"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VHc-cD-bOW">
+                            <rect key="frame" x="10" y="20" width="333" height="161"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamation" translatesAutoresizingMaskIntoConstraints="NO" id="cgo-Gm-pQS">
+                                    <rect key="frame" x="136.66666666666666" y="0.0" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="HDQ-6Z-2C4"/>
+                                        <constraint firstAttribute="width" constant="60" id="y8c-aj-IiR"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove Member" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEw-sZ-o8D">
+                                    <rect key="frame" x="98.333333333333357" y="80" width="136.66666666666663" height="20.333333333333329"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to remove &quot;Super Admin&quot; from this vault?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coe-Qx-eSW">
+                                    <rect key="frame" x="11.333333333333343" y="120.33333333333333" width="310.33333333333326" height="40.666666666666671"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="YrR-wJ-fI9" firstAttribute="top" secondItem="VHc-cD-bOW" secondAttribute="bottom" constant="20" id="0QP-60-hs8"/>
+                        <constraint firstAttribute="trailing" secondItem="YrR-wJ-fI9" secondAttribute="trailing" constant="15" id="AjK-Mw-rOz"/>
+                        <constraint firstAttribute="bottom" secondItem="YrR-wJ-fI9" secondAttribute="bottom" constant="18" id="FCk-zR-ehg"/>
+                        <constraint firstItem="VHc-cD-bOW" firstAttribute="leading" secondItem="aJ9-FG-4b2" secondAttribute="leading" constant="10" id="N4r-Vj-LZy"/>
+                        <constraint firstItem="VHc-cD-bOW" firstAttribute="top" secondItem="aJ9-FG-4b2" secondAttribute="top" constant="20" id="PSE-Wk-wjW"/>
+                        <constraint firstAttribute="trailing" secondItem="VHc-cD-bOW" secondAttribute="trailing" constant="10" id="exx-Z9-JRc"/>
+                        <constraint firstItem="YrR-wJ-fI9" firstAttribute="leading" secondItem="aJ9-FG-4b2" secondAttribute="leading" constant="15" id="ugx-Kx-35e"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="aBM-ZE-P42"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aBM-ZE-P42" firstAttribute="trailing" secondItem="aJ9-FG-4b2" secondAttribute="trailing" constant="20" id="1sY-iT-vyo"/>
+                <constraint firstItem="aJ9-FG-4b2" firstAttribute="centerY" secondItem="mSO-l4-XRe" secondAttribute="centerY" id="bTZ-9B-QrS"/>
+                <constraint firstItem="aJ9-FG-4b2" firstAttribute="leading" secondItem="aBM-ZE-P42" secondAttribute="leading" constant="20" id="qAB-UF-zzm"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="119.71830985915494"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="exclamation" width="512" height="512"/>
+        <namedColor name="primary_color">
+            <color red="0.32549019607843138" green="0.45098039215686275" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
