@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddAttachmentVC" customModule="Gate_Global" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddAttachmentVC" customModule="Pathrium" customModuleProvider="target">
             <connections>
                 <outlet property="collectionViewColorTag" destination="5aM-JH-x0u" id="Ma6-n0-pzo"/>
                 <outlet property="imgDocument" destination="05x-pk-CX2" id="lUJ-Gq-vPx"/>
                 <outlet property="lblColorTagPriority" destination="o5i-FW-WZe" id="0nr-UO-CLh"/>
+                <outlet property="lblUploadDocument" destination="78A-M4-Rv2" id="8R6-PE-C0x"/>
                 <outlet property="svFileText" destination="cNa-8m-4kC" id="IqK-sf-XaA"/>
                 <outlet property="txtDocumentDate" destination="ztr-z3-HmO" id="x1E-9R-iex"/>
                 <outlet property="txtDocumentName" destination="Xzw-c7-ccN" id="qJN-gR-s6X"/>
@@ -98,10 +99,10 @@
                     <rect key="frame" x="0.0" y="168" width="393" height="684"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Drc-cr-pJD">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="969"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="994"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoq-rF-nTf">
-                                    <rect key="frame" x="20" y="10" width="353" height="949"/>
+                                    <rect key="frame" x="20" y="10" width="353" height="974"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WC1-Ki-9uU">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
@@ -121,7 +122,7 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="4bU-HB-KbP">
-                                            <rect key="frame" x="15" y="70" width="323" height="864"/>
+                                            <rect key="frame" x="15" y="70" width="323" height="889"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BiV-Il-tfz">
                                                     <rect key="frame" x="0.0" y="0.0" width="323" height="72"/>
@@ -512,7 +513,7 @@
                                                             <color key="textColor" name="primary_light_color"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBX-jD-eGY" customClass="RectangularDashedView" customModule="Gate_Global" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBX-jD-eGY" customClass="RectangularDashedView" customModule="Pathrium" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="22" width="323" height="110"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="05x-pk-CX2">
@@ -580,7 +581,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dIF-rM-vtb">
-                                                    <rect key="frame" x="0.0" y="748" width="323" height="52"/>
+                                                    <rect key="frame" x="0.0" y="748" width="323" height="77"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1J-NR-cLC">
                                                             <rect key="frame" x="0.0" y="0.0" width="323" height="17"/>
@@ -601,8 +602,8 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                         </collectionView>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5i-FW-WZe">
-                                                            <rect key="frame" x="0.0" y="52" width="323" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5i-FW-WZe">
+                                                            <rect key="frame" x="0.0" y="57" width="323" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="keD-AH-MOG"/>
                                                             </constraints>
@@ -612,7 +613,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXD-pX-pkF">
-                                                    <rect key="frame" x="0.0" y="814" width="323" height="50"/>
+                                                    <rect key="frame" x="0.0" y="839" width="323" height="50"/>
                                                     <color key="backgroundColor" name="primary_color"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="cWQ-gL-Lm1"/>
@@ -709,13 +710,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.53333333333333333" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -27,25 +27,9 @@ class AddAttachmentVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         }
     }
     @IBOutlet weak var lblColorTagPriority: UILabel!
+    @IBOutlet weak var lblUploadDocument: UILabel!
     
-    var arrColors: [UIColor] = [.red, .orange, .yellow, .green, .blue, .purple, .gray]
-    var selectedIndex = -1
-    
-    var arrFolderPriority = ["High Priority", "Medium Priority", "Low Priority", "Live", "Informational", "Confidential", "Archive"]
-    
-    var arrTypes = [
-        "PDF",
-        "Image",
-        "Document",
-        "Excel",
-        "Video"
-    ]
-    var arrStatus = [
-        "Pending",
-        "Approved",
-        "Rejected",
-        "Completed"
-    ]
+    var selectedIndex = 0
     
     var typeDropDown = DropDown()
     var statusDropDown = DropDown()
@@ -53,19 +37,41 @@ class AddAttachmentVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     let documentDatePicker = UIDatePicker()
     let dueDatePicker = UIDatePicker()
     let expiryDatePicker = UIDatePicker()
+    
+    var addAddtachmentVM = AddAttachmentVM()
+    var isUploadDocument: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addAddtachmentVM.getGeneralList()
+        addAddtachmentVM.successGenreal = {
+            
+            self.collectionViewColorTag.reloadData()
+            DispatchQueue.main.async {
+                self.setupDropDowns()
+            }
+            
+        }
+        addAddtachmentVM.failureGenreal = { (error) in
+            self.setUpMakeToast(msg: error)
+        }
 
-        setupDropDowns()
-                setupDatePickers()
+        setupDatePickers()
         // Do any additional setup after loading the view.
     }
     
     func setupDropDowns() {
         
         // Type Dropdown
-        typeDropDown.dataSource = arrTypes
+        
+        var type: [String] = []
+        
+        for obj in addAddtachmentVM.valueList {
+            type.append(obj.name ?? "")
+        }
+        
+        typeDropDown.dataSource = type
         typeDropDown.direction = .bottom
         typeDropDown.anchorView = txtSelectType
         
@@ -74,7 +80,14 @@ class AddAttachmentVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         }
         
         // Status Dropdown
-        statusDropDown.dataSource = arrStatus
+        
+        var status: [String] = []
+        
+        for obj in addAddtachmentVM.statusList {
+            status.append(obj.label ?? "")
+        }
+
+        statusDropDown.dataSource = status
         statusDropDown.direction = .bottom
         statusDropDown.anchorView = txtDocumentStatus
         
@@ -136,7 +149,6 @@ class AddAttachmentVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     @IBAction func tappedBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-
     }
     
     @IBAction func tappedType(_ sender: Any) {
@@ -179,6 +191,46 @@ class AddAttachmentVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     }
     
     @IBAction func tappedAddAttachment(_ sender: Any) {
+        guard let type = txtSelectType.text, !type.isEmpty else {
+            self.setUpMakeToast(msg: "Please select type")
+            return
+        }
+        
+        guard let name = txtDocumentName.text, !name.isEmpty else {
+            self.setUpMakeToast(msg: "Please enter document name")
+            return
+        }
+        
+        guard let referenceNumber = txtReferenceNum.text, !referenceNumber.isEmpty else {
+            self.setUpMakeToast(msg: "Please enter reference number")
+            return
+        }
+        
+        guard let documentDate = txtDocumentDate.text, !documentDate.isEmpty else {
+            self.setUpMakeToast(msg: "Please select document date")
+            return
+        }
+        
+        guard let dueDate = txtDueDate.text, !dueDate.isEmpty else {
+            self.setUpMakeToast(msg: "Please select due date")
+            return
+        }
+        
+        guard let expiryDate = txtExpiryDate.text, !expiryDate.isEmpty else {
+            self.setUpMakeToast(msg: "Please select expiry date")
+            return
+        }
+        
+        guard let status = txtDocumentStatus.text, !status.isEmpty else {
+            self.setUpMakeToast(msg: "Please select document status")
+            return
+        }
+        
+        guard isUploadDocument else {
+            self.setUpMakeToast(msg: "Please upload file")
+            return
+        }
+        
     }
     
 
@@ -232,16 +284,15 @@ extension AddAttachmentVC {
         
         guard let fileURL = urls.first else { return }
         
-        // File name show
-        txtDocumentName.text = fileURL.lastPathComponent
-        
         // Hide upload text
-        svFileText.isHidden = true
-        
+//        svFileText.isHidden = true
+        isUploadDocument = true
+        lblUploadDocument.text = fileURL.lastPathComponent
+          
         // Optional image preview
-        if let image = UIImage(contentsOfFile: fileURL.path) {
-            imgDocument.image = image
-        }
+//        if let image = UIImage(contentsOfFile: fileURL.path) {
+//            imgDocument.image = image
+//        }
         
         print("Selected File:", fileURL)
     }
@@ -253,13 +304,15 @@ extension AddAttachmentVC {
 
 extension AddAttachmentVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrColors.count
+        return addAddtachmentVM.colorList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionViewColorTag.dequeueReusableCell(withReuseIdentifier: "CreateFolderColorsCVCell", for: indexPath) as! CreateFolderColorsCVCell
         
-        cell.viewColor.backgroundColor = arrColors[indexPath.row]
+        let dicData = addAddtachmentVM.colorList[indexPath.row]
+        cell.viewColor.backgroundColor = UIColor(hexString: dicData.hexCode ?? "")
+        
         cell.imgSelectedColor.isHidden = selectedIndex != indexPath.row
         
         return cell
@@ -268,9 +321,11 @@ extension AddAttachmentVC: UICollectionViewDelegate, UICollectionViewDataSource 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
+        let dicData = addAddtachmentVM.colorList[indexPath.row]
+
         selectedIndex = indexPath.row
-        lblColorTagPriority.text = arrFolderPriority[indexPath.row]
-        lblColorTagPriority.isHidden = false
+        lblColorTagPriority.text = dicData.label ?? ""
+        
         collectionView.reloadData()
     }
     

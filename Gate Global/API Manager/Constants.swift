@@ -29,4 +29,5 @@ enum APIEndPoint: String {
     case getUser = "v1/users"
     case addMemeberToPath = "v1/member/add"
     case removeMemeberToPath = "v1/member/remove"
+    case getGeneral = "v1/general"
 }
