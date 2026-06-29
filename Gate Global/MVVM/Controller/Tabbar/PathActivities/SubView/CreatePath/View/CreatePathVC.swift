@@ -42,6 +42,11 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         }
     }
     @IBOutlet weak var heightConstMemberListCV: NSLayoutConstraint!
+    @IBOutlet weak var viewAddTrackBtn: UIView! {
+        didSet {
+            viewAddTrackBtn.isHidden = true
+        }
+    }
     
     var dropDown = DropDown()
 
@@ -49,11 +54,13 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
 
     var vaultRootItems: [PathVaultItem] = []
     private var vaultDisplayItems: [PathVaultItem] = []
+
+    var createPathVM = CreatePathVM()
     
-        
+    // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
         viewPathNamePopUp.isHidden = true
         svMainTrackName.isHidden = true
         svMainDestination.isHidden = true
@@ -61,8 +68,95 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         setupPathTypeDropDown()
         setupPopups()
         setupPathVault()
+        setUpUser()
     }
+    
+    // MARK: - setUpAPI
+    func setUpUser() {
+        
+        createPathVM.getPathList()
+        
+        // Success Response
+        createPathVM.successPathList = {
+            self.viewPathNamePopUp.pathName = self.createPathVM.pathList
+        }
+        createPathVM.failurePathList = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
+        
+        createPathVM.successPathDetails = {
+            self.txtPathName.text = self.createPathVM.pathDetails?.name
+            
+            self.svMainTrackName.isHidden = (self.createPathVM.pathDetails?.tracks?.count ?? 0) > 0 ? false : true
+            self.viewAddTrackBtn.isHidden = (self.createPathVM.pathDetails?.tracks?.count ?? 0) > 0 ? true : false
+            
+            let allData = Track(
+                id: 0,
+                name: "All",
+                description: "",
+                order: 0,
+                colorTagId: 0,
+                members: [],
+                membersCount: 0,
+                vault: nil,
+                destinations: []
+            )
 
+            self.viewTrackNamePopUp.trackName = [allData] + (self.createPathVM.pathDetails?.tracks ?? [])
+            
+            let allDestinations = Destination(
+                id: 0,
+                name: "All",
+                description: "",
+                order: 0,
+                colorTagId: 0,
+                members: [],
+                membersCount: 0,
+                vault: nil
+            )
+
+            let trackDetails = self.createPathVM.pathDetails?.tracks?.first(where: { $0.id == self.createPathVM.track_id })
+            
+            self.viewDestinationPopUp.destination = [allDestinations] + (trackDetails?.destinations ?? [])
+
+            self.svMainDestination.isHidden = (trackDetails?.destinations?.count ?? 0) > 0 ? false : true
+            self.viewAddDestinationBtn.isHidden = (trackDetails?.destinations?.count ?? 0) > 0 ? true : false
+            
+            self.collectionViewMembersList.reloadData()
+        }
+        createPathVM.failurePathDetails = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
+        
+        createPathVM.successCreateTrack = {
+            self.txtTrackName.text = self.createPathVM.trackDetails?.name ?? ""
+            self.createPathVM.track_id = self.createPathVM.trackDetails?.id ?? 0
+            
+            self.createPathVM.getPathDetails()
+            
+        }
+        createPathVM.failureCreateTrack = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
+        
+        createPathVM.successCreatePath = {
+            self.createPathVM.getPathList()
+            self.createPathVM.getPathDetails()
+            
+        }
+        createPathVM.failureCreatePath = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
+        
+        createPathVM.successCreateDestinations = {
+            self.createPathVM.getPathDetails()
+        }
+        createPathVM.failureCreateDestinations = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
+    }
+    
+    // MARK: - Action Method
     @IBAction func tappedBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -98,6 +192,20 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     @IBAction func tappedTrackName(_ sender: Any) {
         showPopup(viewTrackNamePopUp)
     }
+    @IBAction func tappedAddTrackName(_ sender: Any) {
+        let vc = AddNewPathPopUpVC()
+        vc.modalPresentationStyle = .overFullScreen
+
+        // ✅ SET TYPE PROPERTY INSTEAD
+        vc.actionType = .addNewTrack
+
+        vc.onSubmit = { value in
+            self.createPathVM.createTrackName(name: value)
+    
+        }
+
+        self.present(vc, animated: false)
+    }
     
     @IBAction func tappedAddDestination(_ sender: Any) {
         let vc = AddNewPathPopUpVC()
@@ -106,19 +214,7 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         
         vc.onSubmit = { [weak self] value in
             guard let self = self else { return }
-            
-            self.svMainDestination.isHidden = false
-            
-            self.viewAddDestinationBtn.isHidden = true
-            
-            self.txtDestination.text = value
-            
-            var list = self.viewDestinationPopUp.destination
-            list.removeAll(where: { $0 == value })
-            list.insert(value, at: 1)
-            self.viewDestinationPopUp.destination = list
-            
-            self.viewDestinationPopUp.tblViewPathList.reloadData()
+            self.createPathVM.createDestinations(name: value)
         }
         
         self.present(vc, animated: false)
@@ -223,58 +319,40 @@ class CreatePathVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
             vc.onSubmit = { value in
                 switch action {
                 case .addNewPath:
-                    self.txtPathName.text = value
+                    self.createPathVM.createPathName(name: value)
                     
-                    self.viewPathNamePopUp.pathName.insert(value, at: 0)
-                    self.viewPathNamePopUp.tblViewPathList.reloadData()
-                    
-                    self.svMainTrackName.isHidden = false
-                    self.txtTrackName.text = self.viewTrackNamePopUp.defaultOption
-                    
-                    self.svMainDestination.isHidden = true
-                    self.txtDestination.text = ""
 
                 case .addNewTrack:
-                    self.txtTrackName.text = value
-                    
-                    self.viewTrackNamePopUp.trackName.insert(value, at: 0)
-                    self.viewTrackNamePopUp.tblViewPathList.reloadData()
-                    
-                    self.svMainDestination.isHidden = false
-                    self.viewAddDestinationBtn.isHidden = true
-                    self.txtDestination.text = self.viewDestinationPopUp.defaultOption
+                    self.createPathVM.createTrackName(name: value)
 
                 case .addNewDestination:
-                    self.txtDestination.text = value
+                    self.createPathVM.createDestinations(name: value)
                     
-                    self.viewDestinationPopUp.destination.insert(value, at: 1)
-                    self.viewDestinationPopUp.tblViewPathList.reloadData()
                 }
             }
 
             self.present(vc, animated: false)
         }
         
-        popup.onSelect = { [weak self] value in
+        popup.onSelect = { [weak self] value, id in
             guard let self = self else { return }
             
             switch type {
             case .addNewPath:
-                self.txtPathName.text = value
-                
-                self.svMainTrackName.isHidden = false
-                
-                self.txtTrackName.text = self.viewTrackNamePopUp.defaultOption
-                
-                self.svMainDestination.isHidden = true
-                self.txtDestination.text = ""
+                createPathVM.pathId = id
+                createPathVM.getPathDetails()
                 
             case .addNewTrack:
-                self.txtTrackName.text = value
                 
-                self.svMainDestination.isHidden = false
-                self.viewAddDestinationBtn.isHidden = true
+                let trackDetails = createPathVM.pathDetails?.tracks?.first(where: { $0.id == id })
+
+                self.txtTrackName.text = trackDetails?.name
+                self.createPathVM.track_id = trackDetails?.id ?? 0
+                
+                createPathVM.getPathDetails()
+
                 self.txtDestination.text = self.viewDestinationPopUp.defaultOption
+                
             case .addNewDestination:
                 self.txtDestination.text = value
             }
@@ -519,21 +597,38 @@ extension CreatePathVC: PathVaultCellDelegate {
 
 extension CreatePathVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        if section == 0 {
+            return 1
+        } else {
+            return self.createPathVM.pathDetails?.members?.count ?? 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionViewMembersList.dequeueReusableCell(withReuseIdentifier: "MembersListCVCell", for: indexPath) as! MembersListCVCell
-        
-        if indexPath.row == 0 {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MembersListCVCell", for: indexPath) as! MembersListCVCell
+
+        if indexPath.section == 0 {
+
             cell.viewMainAdd.isHidden = false
             cell.viewMainMembers.isHidden = true
+
         } else {
+
+            let member = self.createPathVM.pathDetails?.members?[indexPath.row]
+
+            cell.lblMemberFirstLetter.text = member?.name.map { String($0.prefix(2)) } ?? ""
+            cell.lblMemberName.text = member?.name
+
             cell.viewMainAdd.isHidden = true
             cell.viewMainMembers.isHidden = false
         }
-        
+
         return cell
     }
     

@@ -28,7 +28,7 @@ class PathNameListView: UIView {
     private let nibName = String(describing: PathNameListView.self)
     
     var onAction: ((PathAction) -> Void)?
-    var onSelect: ((String) -> Void)?
+    var onSelect: ((String, Int) -> Void)?
     
     var type: PathAction = .addNewPath {
         didSet {
@@ -37,9 +37,22 @@ class PathNameListView: UIView {
         }
     }
     
-    var pathName = ["D1 Alpha Complete4", "D1 Alpha Complete5", "D1 Alpha Complete6", "D1 Alpha Complete7"]
-    var trackName = ["All", "Design Phase", "Design Track"]
-    var destination = ["All", "UI Design", "UX Design"]
+    var pathName: [PathModel] = [] {
+        didSet {
+            tblViewPathList.reloadData()
+        }
+    }
+    
+    var trackName: [Track] = [] {
+        didSet {
+            tblViewPathList.reloadData()
+        }
+    }
+    var destination: [Destination] = [] {
+        didSet {
+            tblViewPathList.reloadData()
+        }
+    }
     
     let defaultOption = "All"
     
@@ -107,11 +120,14 @@ extension PathNameListView: UITableViewDelegate, UITableViewDataSource {
         
         switch type {
         case .addNewPath:
-            cell.lblPathName.text = pathName[indexPath.row]
+            cell.lblPathName.text = pathName[indexPath.row].name
+            
         case .addNewTrack:
-            cell.lblPathName.text = trackName[indexPath.row]
+            cell.lblPathName.text = trackName[indexPath.row].name
+            
         case .addNewDestination:
-            cell.lblPathName.text = destination[indexPath.row]
+            cell.lblPathName.text = destination[indexPath.row].name
+            
         }
         
         return cell
@@ -123,16 +139,23 @@ extension PathNameListView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var selectedValue = ""
+        var selectedId: Int = 0
         
         switch type {
         case .addNewPath:
-            selectedValue = pathName[indexPath.row]
+            selectedValue = pathName[indexPath.row].name
+            selectedId = pathName[indexPath.row].id
+            
         case .addNewTrack:
-            selectedValue = trackName[indexPath.row]
+            selectedValue = trackName[indexPath.row].name ?? ""
+            selectedId = trackName[indexPath.row].id ?? 0
+            
         case .addNewDestination:
-            selectedValue = destination[indexPath.row]
+            selectedValue = destination[indexPath.row].name ?? ""
+            selectedId = destination[indexPath.row].id ?? 0
+
         }
         
-        onSelect?(selectedValue)
+        onSelect?(selectedValue, selectedId)
     }
 }

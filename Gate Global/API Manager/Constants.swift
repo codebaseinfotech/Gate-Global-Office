@@ -24,4 +24,6 @@ enum APIEndPoint: String {
     case verifyOtp = "v1/auth/verify-otp"
     case logout = "v1/auth/logout"
     case paths = "v1/paths"
+    case createTrack = "v1/tracks"
+    case createDestinations = "v1/destinations"
 }

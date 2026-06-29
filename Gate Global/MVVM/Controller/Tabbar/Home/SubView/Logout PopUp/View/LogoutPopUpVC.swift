@@ -20,6 +20,8 @@ class LogoutPopUpVC: UIViewController {
     }
     
     @IBAction func tappedYes(_ sender: Any) {
+        GGUtilites.logout()
+        AppDelegate.appDelegate.setUpLogin()
     }
     
 }
