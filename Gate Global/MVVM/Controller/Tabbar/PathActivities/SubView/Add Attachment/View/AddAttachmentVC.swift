@@ -29,10 +29,16 @@ class AddAttachmentVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     @IBOutlet weak var lblColorTagPriority: UILabel!
     @IBOutlet weak var lblUploadDocument: UILabel!
     
+    @IBOutlet weak var txtCompany: UITextField!
+    @IBOutlet weak var txtEntity: UITextField!
+    
+    
     var selectedIndex = 0
     
     var typeDropDown = DropDown()
     var statusDropDown = DropDown()
+    var companyDropDown = DropDown()
+    var entityDropDown = DropDown()
     
     let documentDatePicker = UIDatePicker()
     let dueDatePicker = UIDatePicker()
@@ -45,6 +51,8 @@ class AddAttachmentVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         super.viewDidLoad()
         
         addAddtachmentVM.getGeneralList()
+        addAddtachmentVM.getLockUp()
+        
         addAddtachmentVM.successGenreal = {
             
             self.collectionViewColorTag.reloadData()
@@ -56,6 +64,18 @@ class AddAttachmentVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         addAddtachmentVM.failureGenreal = { (error) in
             self.setUpMakeToast(msg: error)
         }
+        
+        addAddtachmentVM.successLookUps = {
+            
+            DispatchQueue.main.async {
+                self.setupDropDowns()
+            }
+            
+        }
+        addAddtachmentVM.failureLookUps = { (error) in
+            self.setUpMakeToast(msg: error)
+        }
+        
 
         setupDatePickers()
         // Do any additional setup after loading the view.
@@ -93,6 +113,34 @@ class AddAttachmentVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         
         statusDropDown.selectionAction = { [weak self] index, item in
             self?.txtDocumentStatus.text = item
+        }
+        
+        var companyList: [String] = []
+        
+        for obj in addAddtachmentVM.companyList {
+            companyList.append(obj.name ?? "")
+        }
+        
+        companyDropDown.dataSource = companyList
+        companyDropDown.direction = .bottom
+        companyDropDown.anchorView = txtCompany
+        
+        companyDropDown.selectionAction = { [weak self] index, item in
+            self?.txtCompany.text = item
+        }
+        
+        var entityList: [String] = []
+        
+        for obj in addAddtachmentVM.entityList {
+            entityList.append(obj.name ?? "")
+        }
+        
+        entityDropDown.dataSource = entityList
+        entityDropDown.direction = .bottom
+        entityDropDown.anchorView = txtEntity
+        
+        entityDropDown.selectionAction = { [weak self] index, item in
+            self?.txtEntity.text = item
         }
     }
     
@@ -155,6 +203,13 @@ class AddAttachmentVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         typeDropDown.show()
     }
     
+    @IBAction func tappedComany(_ sender: Any) {
+        companyDropDown.show()
+    }
+    @IBAction func tappedEntity(_ sender: Any) {
+        entityDropDown.show()
+    }
+    
     @IBAction func tappedDocumentDate(_ sender: Any) {
         txtDocumentDate.becomeFirstResponder()
     }
@@ -162,6 +217,7 @@ class AddAttachmentVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     @IBAction func tappedDueDate(_ sender: Any) {
         txtDueDate.becomeFirstResponder()
     }
+  
     
     @IBAction func tappedExpiryDate(_ sender: Any) {
         txtExpiryDate.becomeFirstResponder()
@@ -196,20 +252,22 @@ class AddAttachmentVC: UIViewController, UIImagePickerControllerDelegate, UINavi
             return
         }
         
-        guard let name = txtDocumentName.text, !name.isEmpty else {
+        /*guard let name = txtDocumentName.text, !name.isEmpty else {
             self.setUpMakeToast(msg: "Please enter document name")
             return
-        }
-        
-        guard let referenceNumber = txtReferenceNum.text, !referenceNumber.isEmpty else {
-            self.setUpMakeToast(msg: "Please enter reference number")
-            return
-        }
-        
+        }*/
+      
         guard let documentDate = txtDocumentDate.text, !documentDate.isEmpty else {
             self.setUpMakeToast(msg: "Please select document date")
             return
         }
+        
+        
+        guard let referenceNumber = txtReferenceNum.text, !referenceNumber.isEmpty else {
+            self.setUpMakeToast(msg: "Please enter id")
+            return
+        }
+        
         
         guard let dueDate = txtDueDate.text, !dueDate.isEmpty else {
             self.setUpMakeToast(msg: "Please select due date")
